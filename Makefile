@@ -1,7 +1,9 @@
+package = ../cloud_scanner
+
 sphinx:
 	cd docs && \
 	make clean && \
-	sphinx-apidoc -f -o source/generated ../cloud_scanner && \
+	sphinx-apidoc -f -o source/generated $(package) && \
 	make html
 
 ghpages:
