@@ -9,8 +9,8 @@ ghpages:
 	mv docs/build/html new-docs && \
 	rm -rf docs && \
 	mv new-docs docs && \
-	mv docs/* . && \
+	cp -r docs/* . && \
 	rm -rf docs && \
 	touch .nojekyll && \
 	git add . && \
-	git commit -m "Updated generated Sphinx documentation"mit -m "Updated generated Sphinx documentation"
+	git commit -m "Updated generated Sphinx documentation"
