@@ -108,3 +108,8 @@ venv.bak/
 .idea/
 .vscode/
 
+docs/.buildinfo
+docs/.nojekyll
+docs/_sources/
+docs/_static/
+docs/generated/
