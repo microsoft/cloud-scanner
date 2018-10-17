@@ -2,6 +2,7 @@ package = ../cloud_scanner
 
 sphinx:
 	cd docs && \
+	mkdir source/_static && \
 	make clean && \
 	sphinx-apidoc -f -o source/generated $(package) && \
 	make html
