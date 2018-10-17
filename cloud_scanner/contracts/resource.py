@@ -183,11 +183,12 @@ class Resource(ABC):
         :return: Normalized dictionary
         """
 
-        out_dict = copy.deepcopy(self.raw) # Populate with full meta-data?
+        out_dict = copy.deepcopy(self.raw)  # Populate with full meta-data?
 
         out_dict.update({'AppDefined02': self.tag_guid})
         out_dict.update({"Environment": self.environment})
-        out_dict.update({"ResourceType": self.type.replace("/", "_").replace(".", "_")})
+        out_dict.update(
+            {"ResourceType": self.type.replace("/", "_").replace(".", "_")})
         out_dict.update({"ResourceId": self.name})
         out_dict.update({"ARN": self.id})
         out_dict.update({"Name": self.tag_name})
@@ -200,7 +201,6 @@ class Resource(ABC):
         out_dict.update({"Hash": self._generate_hash(out_dict)})
 
         return out_dict
-
 
     def to_dict(self):
         """
@@ -221,8 +221,3 @@ class Resource(ABC):
         :return: JSON str of resource dictionary
         """
         return json.dumps(self.to_dict())
-
-
-
-
-

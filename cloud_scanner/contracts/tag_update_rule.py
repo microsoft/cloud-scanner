@@ -44,4 +44,5 @@ class TagUpdateRule(Rule):
         :param resource: The resource to update tags on.
         :return: dict of tags as key value pairs.
         """
-        raise NotImplementedError("get_tags is not implemented in the abstract base class")
+        raise NotImplementedError(
+            "get_tags is not implemented in the abstract base class")

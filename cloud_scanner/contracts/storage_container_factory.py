@@ -32,7 +32,8 @@ class StorageContainerFactory:
         try:
             return cls._factories[service_type]()
         except KeyError:
-            raise KeyError(f"Service type {service_type} is not registered for Storage Container Service")
+            raise KeyError(
+                f"Service type {service_type} is not registered for Storage Container Service")
 
     @classmethod
     def register_factory(cls, service_type: str, factory_func):

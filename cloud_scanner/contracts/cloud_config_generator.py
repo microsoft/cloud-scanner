@@ -51,5 +51,6 @@ class CloudConfigGenerator:
         :param config: json payload of config
         :return: None
         """
-        blob_name = 'config-{date:%Y-%m-%d-%H-%M-%S}.json'.format(date=datetime.now())
+        blob_name = 'config-{date:%Y-%m-%d-%H-%M-%S}.json'.format(
+            date=datetime.now())
         self._container.upload_text(blob_name, config)

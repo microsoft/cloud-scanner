@@ -9,6 +9,7 @@ class Rule(ABC):
     Any implemented rule must define each method described in this
     interface.
     """
+
     def check_condition(self, resource: Resource) -> bool:
         """Returns True/False whether the rule should be performed on the input
         resource.

@@ -6,6 +6,7 @@ from .storage_container import StorageContainer
 
 class CloudConfigReader:
     """Helper to read cloud configuration file."""
+
     def __init__(self, container_service: StorageContainer):
         self._container_service = container_service
 
@@ -29,7 +30,8 @@ class CloudConfigReader:
             return None
 
         # read the contents of the latest config
-        json_data = self._container_service.get_blob_to_text(latest_config).content
+        json_data = self._container_service.get_blob_to_text(
+            latest_config).content
         if json_data == '{}':
             logging.error("Empty JSON returned!")
             return None

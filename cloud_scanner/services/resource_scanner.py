@@ -34,7 +34,8 @@ class ResourceScanner:
 
         queue_name = ProcessConfig().payload_queue_name
 
-        resource_service = ResourceServiceFactory.create(task["providerType"], task["subscriptionId"])
+        resource_service = ResourceServiceFactory.create(
+            task["providerType"], task["subscriptionId"])
         output_queue = QueueFactory.create(queue_name)
 
         task_processor = ResourceTaskProcessor(resource_service, output_queue)
@@ -56,10 +57,12 @@ class ResourceTaskProcessor:
         """
         subscription_id = task["subscriptionId"]
         if subscription_id is None:
-            raise Exception("Couldn't find a subscriptionId for the task: " + json.dumps(task))
+            raise Exception(
+                "Couldn't find a subscriptionId for the task: " + json.dumps(task))
 
         resource_type = task.get("typeName", None)
-        logging.info(f"Received task for subscription {subscription_id} and resource type {resource_type}")
+        logging.info(
+            f"Received task for subscription {subscription_id} and resource type {resource_type}")
 
         resource_filter = self._resource_service.get_filter(resource_type)
         resources = self._resource_service.get_resources(resource_filter)

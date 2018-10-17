@@ -70,6 +70,3 @@ class ProcessConfig(Config):
         """Gets the batch size of resources to send to the storage service,
         specified by the RESOURCE_BATCH_SIZE property Defaults to 16."""
         return int(self.get_property('RESOURCE_BATCH_SIZE', '16'))
-
-
-

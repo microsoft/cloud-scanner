@@ -18,7 +18,7 @@ class ResourceService(ABC):
         raise NotImplementedError("name is not implemented")
 
     @abstractmethod
-    def get_resources(self, filter: ResourceFilter=None):
+    def get_resources(self, filter: ResourceFilter = None):
         """Get resources based on filter Not implemented in this class."""
         raise NotImplementedError("get_resources is not implemented")
 
