@@ -28,8 +28,8 @@ class QueueFactory:
     def create(cls, queue_name: str) -> Queue:
         """
         Returns a queue with 'queue_name' of type specified in the config "QUEUE_TYPE" property.
-        :param queue_name: Name of the queue
-        :return: Implemented instance of the Queue contract
+            :param queue_name: Name of the queue
+            :return: Implemented instance of the Queue contract
         """
         # @TODO: No way of using more than one type of queue type since service_type is being read from config instead of being passed in/dynamic.
         service_type = ProcessConfig().queue_type

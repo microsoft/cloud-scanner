@@ -20,8 +20,8 @@ class ResourceExtractors:
     def get_subscription(cls, resource_id):
         """
         Extracts the subscription id from a resource id.
-        :param resource_id" resource id to extract from
-        :return: subscription id string or None
+            :param resource_id" resource id to extract from
+            :return: subscription id string or None
         """
 
         matches = cls.rg_sub_extractor.search(resource_id)
@@ -34,8 +34,8 @@ class ResourceExtractors:
     def get_resource_group(cls, resource_id):
         """
         Extracts the resource group from a resource id.
-        :param resource_id" resource id to extract from
-        :return: resource group string or None
+            :param resource_id" resource id to extract from
+            :return: resource group string or None
         """
 
         matches = cls.rg_sub_extractor.search(resource_id)
@@ -48,8 +48,8 @@ class ResourceExtractors:
     def get_resource_provider(cls, resource_id):
         """
         Extracts the resource provider from a resource id.
-        :param resource_id" resource id to extract from
-        :return: resource provider string or None
+            :param resource_id" resource id to extract from
+            :return: resource provider string or None
         """
 
         ms_resource_id = "/providers/Microsoft.Resources" + resource_id
@@ -64,8 +64,8 @@ class ResourceExtractors:
     def get_resource_type(cls, resource_id):
         """
         Extracts the resource type from a resource id.
-        :param resource_id" resource id to extract from
-        :return: resource type string or None
+            :param resource_id" resource id to extract from
+            :return: resource type string or None
         """
         ms_resource_id = "/providers/Microsoft.Resources" + resource_id
 

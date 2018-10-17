@@ -6,8 +6,8 @@ class EntryOperations:
     def prepare_entry_for_insert(resource):
         """
         Optimize resource for table entry insertion
-        :param resource: Resource to be inserted in Storage
-        :return: Prepared resource
+            :param resource: Resource to be inserted in Storage
+            :return: Prepared resource
         """
         # using location as the partition key. This will keep all the data from
         # the same location on the same node for fastest access

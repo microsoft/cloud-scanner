@@ -14,7 +14,7 @@ class CloudConfigReader:
     def read_config(self):
         """
         Read cloud configuration file from storage container
-        :return: json payload of cloud config
+            :return: json payload of cloud config
         """
         # get a list of files in the blob container
         config_list = self._container_service.list_blobs()

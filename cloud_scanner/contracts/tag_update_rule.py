@@ -24,8 +24,8 @@ class TagUpdateRule(Rule):
         """
         Processes the resource with the rule.
         The resource will first be checked to see the rule should be run using 'check_condition'
-        :param resource: The resource to be processed with the rule.
-        :return: Boolean if the rule was run.
+            :param resource: The resource to be processed with the rule.
+            :return: Boolean if the rule was run.
         """
         if self.check_condition(resource):
             tags = self.get_tags(resource)
@@ -42,7 +42,7 @@ class TagUpdateRule(Rule):
     def get_tags(self, resource: Resource) -> dict:
         """
         The dictionary of tags to update the resource with.
-        :param resource: The resource to update tags on.
-        :return: dict of tags as key value pairs.
+            :param resource: The resource to update tags on.
+            :return: dict of tags as key value pairs.
         """
         raise NotImplementedError("get_tags is not implemented in the abstract base class")
