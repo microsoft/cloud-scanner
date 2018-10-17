@@ -58,7 +58,8 @@ class ResourceTaskProcessor:
         subscription_id = task["subscriptionId"]
         if subscription_id is None:
             raise Exception(
-                "Couldn't find a subscriptionId for the task: " + json.dumps(task))
+                "Couldn't find a subscriptionId for the task: " +
+                json.dumps(task))
 
         resource_type = task.get("typeName", None)
         logging.info(
@@ -72,7 +73,8 @@ class ResourceTaskProcessor:
         # Transform resources to resource dictionaries
         resources = [resource.to_dict() for resource in resources]
 
-        for batch in batch_list(resources, batch_size=ProcessConfig().batch_size):
+        for batch in batch_list(resources,
+                                batch_size=ProcessConfig().batch_size):
             self._queue.push(json.dumps(batch))
             resource_count += 1
 
