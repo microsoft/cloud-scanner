@@ -3,10 +3,9 @@ import logging
 
 from cloud_scanner.helpers import batch_list
 from cloud_scanner.config.process_config import ProcessConfig
-from cloud_scanner.contracts import Queue
-from cloud_scanner.contracts.resource_service_factory import ResourceServiceFactory
-from cloud_scanner.contracts.queue_factory import QueueFactory
-from cloud_scanner.contracts.resource_service import ResourceService
+from cloud_scanner.contracts import (
+    Queue, ResourceServiceFactory, QueueFactory, ResourceService
+)
 
 
 def _read_as_json(msg):
@@ -63,7 +62,8 @@ class ResourceTaskProcessor:
 
         resource_type = task.get("typeName", None)
         logging.info(
-            f"Received task for subscription {subscription_id} and resource type {resource_type}")
+            f"Received task for subscription {subscription_id} " +
+            f"and resource type {resource_type}")
 
         resource_filter = self._resource_service.get_filter(resource_type)
         resources = self._resource_service.get_resources(resource_filter)

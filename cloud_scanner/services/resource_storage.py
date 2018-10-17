@@ -1,7 +1,6 @@
 import logging
 
-from cloud_scanner.contracts.resource import Resource
-from cloud_scanner.contracts.resource_storage_factory import ResourceStorageFactory
+from cloud_scanner.contracts import Resource, ResourceStorageFactory
 
 
 class ResourceStorage:

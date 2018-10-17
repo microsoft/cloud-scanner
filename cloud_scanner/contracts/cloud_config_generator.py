@@ -14,7 +14,8 @@ class CloudConfigGenerator:
     def generate_config(self, providers_types: list, resource_types: list):
         """Generate cloud configuration payload.
 
-        :param providers_types: comma-separated list of cloud providers (aws,azure,gcp)
+        :param providers_types:
+            comma-separated list of cloud providers (azure, aws, gcp)
         :param resource_types: comma-separated list of cloud resource types
         :return: str of Json payload
         """

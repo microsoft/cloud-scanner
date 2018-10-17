@@ -32,7 +32,8 @@ class AccountServiceFactory:
             return cls._factories[service_type]()
         except KeyError:
             raise KeyError(
-                f"Service type {service_type} is not registered for Account Service")
+                f"Service type {service_type} is not " +
+                "registered for Account Service")
 
     @classmethod
     def get_providers(cls):

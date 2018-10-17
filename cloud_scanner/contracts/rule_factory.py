@@ -1,7 +1,10 @@
 def register_rule(factory_func=None):
     """Decorator for registering a rule with the rule factory.
 
-    :param factory_func: Optional lambda/function that will create and return an instance of the rule. Required if the rule has an __init__ function that takes any parameter other than self.
+    :param factory_func: Optional lambda/function that will
+        create and return an instance of the rule. Required if
+        the rule has an __init__ function that takes any parameter
+        other than self.
     """
     def decorator(cls):
         if factory_func is None:
@@ -14,11 +17,12 @@ def register_rule(factory_func=None):
 
 
 class RuleFactory:
-    """Rule factory responsible for maintaining a list of rule definitions and
-    returning instances of all registered rules.
+    """Rule factory responsible for maintaining a list of rule
+    definitions and returning instances of all registered rules.
 
     Attributes:
-        _rules_factories: A list of lambda/functions that will instantiate an instance of each unique rule.
+        _rules_factories: A list of lambda/functions that will instantiate
+        an instance of each unique rule.
     """
     _rules_factories = []
 

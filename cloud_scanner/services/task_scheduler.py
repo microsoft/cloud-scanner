@@ -1,9 +1,9 @@
 import json
 import logging
 
-from cloud_scanner.contracts import CloudConfigReader
-from cloud_scanner.contracts.queue_factory import QueueFactory
-from cloud_scanner.contracts.storage_container_factory import StorageContainerFactory
+from cloud_scanner.contracts import (
+    CloudConfigReader, QueueFactory, StorageContainerFactory
+)
 from cloud_scanner.config.process_config import ProcessConfig
 
 

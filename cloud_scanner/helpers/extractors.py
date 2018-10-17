@@ -8,11 +8,13 @@ class ResourceExtractors:
     Attributes:
         provider_extractor: Regex for extracting the resource provider.
         type_extractor: Regex for extracting types from a resource provider.
-        rg_sub_extractor: Regex for extracting the resource group and subscription id.
+        rg_sub_extractor: Regex for extracting the resource group
+            and subscription id.
     """
 
     provider_extractor = re.compile(
-        r"(?!(?:\/[^\/]+\/[^\/]+)+\/providers)\/providers\/([^\/]+)((:?\/[^\/]+\/[^\/]+)*)$",
+        r"(?!(?:\/[^\/]+\/[^\/]+)+\/providers)" +
+        r"\/providers\/([^\/]+)((:?\/[^\/]+\/[^\/]+)*)$",
         re.IGNORECASE)
     type_extractor = re.compile(r"\/([^\/]+)\/([^\/]+)", re.IGNORECASE)
     rg_sub_extractor = re.compile(
