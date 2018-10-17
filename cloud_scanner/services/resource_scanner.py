@@ -10,8 +10,8 @@ from cloud_scanner.contracts.resource_service import ResourceService
 
 
 def _read_as_json(msg):
-    """
-    Decode message (UTF-8) and read into dictionary
+    """Decode message (UTF-8) and read into dictionary.
+
     :param msg: str to decode and deserialize
     :return: Dictionary from message
     """
@@ -20,15 +20,13 @@ def _read_as_json(msg):
 
 
 class ResourceScanner:
-    """
-    Scan cloud service for resources
-    """
+    """Scan cloud service for resources."""
 
     @staticmethod
     def process_queue_message(message):
-        """
-        Receives message from queue, which tells it which resources to
-        scan from cloud provider
+        """Receives message from queue, which tells it which resources to scan
+        from cloud provider.
+
         :param message: Task of which resources to scan
         :return: List of resources scanned from cloud provider
         """
@@ -44,17 +42,15 @@ class ResourceScanner:
 
 
 class ResourceTaskProcessor:
-    """
-    Process resource scanning tasks and return as dictionaries
-    """
+    """Process resource scanning tasks and return as dictionaries."""
 
     def __init__(self, resource_service: ResourceService, output_queue: Queue):
         self._resource_service = resource_service
         self._queue = output_queue
 
     def execute(self, task):
-        """
-        Execute scanning of resources
+        """Execute scanning of resources.
+
         :param task: Defines which resources to scan
         :return: List of resources as dictionaries
         """

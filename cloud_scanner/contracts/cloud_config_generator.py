@@ -6,16 +6,14 @@ from .storage_container import StorageContainer
 
 
 class CloudConfigGenerator:
-    """
-    Generate cloud configuration file for process workflow
-    """
+    """Generate cloud configuration file for process workflow."""
 
     def __init__(self, storage_container: StorageContainer):
         self._container = storage_container
 
     def generate_config(self, providers_types: list, resource_types: list):
-        """
-        Generate cloud configuration payload
+        """Generate cloud configuration payload.
+
         :param providers_types: comma-separated list of cloud providers (aws,azure,gcp)
         :param resource_types: comma-separated list of cloud resource types
         :return: str of Json payload
@@ -48,8 +46,8 @@ class CloudConfigGenerator:
         })
 
     def output_config(self, config):
-        """
-        Upload config payload to Storage container
+        """Upload config payload to Storage container.
+
         :param config: json payload of config
         :return: None
         """

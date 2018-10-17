@@ -1,7 +1,7 @@
 
 def batch_list(items, batch_size):
-    """
-    Create batches from list of elements
+    """Create batches from list of elements.
+
     :param items: List of all elements
     :param batch_size: Desired size of batches
     :return: Batches of list

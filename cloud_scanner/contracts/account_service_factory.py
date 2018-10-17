@@ -2,8 +2,8 @@ from .account_service import AccountService
 
 
 def register_account_service(service_name, service_factory):
-    """
-    Registers an account service for a cloud provider
+    """Registers an account service for a cloud provider.
+
     :param service_name: name of cloud provider ('aws' or 'azure')
     :param service_factory:
     :return:
@@ -18,15 +18,13 @@ def register_account_service(service_name, service_factory):
 
 
 class AccountServiceFactory:
-    """
-    Factory to instantiate account services for cloud providers
-    """
+    """Factory to instantiate account services for cloud providers."""
     _factories = {}
 
     @classmethod
     def create(cls, service_type: str) -> AccountService:
-        """
-        Create an account service based on service type
+        """Create an account service based on service type.
+
         :param service_type: str
         :return:
         """

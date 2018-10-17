@@ -4,8 +4,8 @@ import uuid
 class EntryOperations:
     @staticmethod
     def prepare_entry_for_insert(resource):
-        """
-        Optimize resource for table entry insertion
+        """Optimize resource for table entry insertion.
+
         :param resource: Resource to be inserted in Storage
         :return: Prepared resource
         """

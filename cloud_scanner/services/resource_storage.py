@@ -5,13 +5,11 @@ from cloud_scanner.contracts.resource_storage_factory import ResourceStorageFact
 
 
 class ResourceStorage:
-    """
-    Store resources from scanning
-    """
+    """Store resources from scanning."""
     @staticmethod
     def process_queue_message(message):
-        """
-        Receives resources from queue and stores in registered service
+        """Receives resources from queue and stores in registered service.
+
         :param message: Payload of resources to store
         :return: Number of resources stored in service
         """
@@ -23,8 +21,8 @@ class ResourceStorage:
 
 
 def _parse_resources(message):
-    """
-    Parse message from queue as JSON of resources
+    """Parse message from queue as JSON of resources.
+
     :param message: JSON of resources
     :return: Deserialized list of Resource objects
     """

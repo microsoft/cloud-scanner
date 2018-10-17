@@ -6,9 +6,7 @@ from abc import ABC
 
 
 class Resource(ABC):
-    """
-    Base class for cloud resource object
-    """
+    """Base class for cloud resource object."""
 
     def __init__(self, d: dict):
         self._raw = d
@@ -29,8 +27,7 @@ class Resource(ABC):
 
     @staticmethod
     def _jsonify(o):
-        """
-        Handle any non-json serializable types.
+        """Handle any non-json serializable types.
 
         :param o: object
         :return: str of json
@@ -39,8 +36,8 @@ class Resource(ABC):
             return o.__str__()
 
     def _generate_hash(self, data):
-        """
-        Generate a hash of data provided
+        """Generate a hash of data provided.
+
         :param data: Data to use for hash
         :return: Sha-1 hash of data
         """
@@ -51,8 +48,8 @@ class Resource(ABC):
         return hashlib.sha1(stringified).hexdigest()
 
     def _get_tag_guid(self):
-        """
-        Get GUID for tag
+        """Get GUID for tag.
+
         :return: GUID
         """
         tag_guid = self._tags.get('TagGuid', None)
@@ -118,8 +115,8 @@ class Resource(ABC):
 
     @name.setter
     def name(self, value):
-        """
-        Set name of resource
+        """Set name of resource.
+
         :param value: new name
         :return: None
         """
@@ -141,8 +138,8 @@ class Resource(ABC):
 
     @location.setter
     def location(self, value):
-        """
-        Set location of resource
+        """Set location of resource.
+
         :param value: location
         :return: None
         """
@@ -157,8 +154,8 @@ class Resource(ABC):
 
     @tags.setter
     def tags(self, value):
-        """
-        Set tags for resource
+        """Set tags for resource.
+
         :param value: tags dictionary
         :return: None
         """
@@ -173,16 +170,16 @@ class Resource(ABC):
 
     @provider_type.setter
     def provider_type(self, provider_type):
-        """
-        Set resource provider type
+        """Set resource provider type.
+
         :param provider_type: new provider type for resource
         :return: None
         """
         self._provider_type = provider_type
 
     def to_normalized_dict(self):
-        """
-        Create normalized dictionary for resource across cloud providers
+        """Create normalized dictionary for resource across cloud providers.
+
         :return: Normalized dictionary
         """
 

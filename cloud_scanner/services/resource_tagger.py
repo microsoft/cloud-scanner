@@ -8,14 +8,12 @@ from cloud_scanner.contracts.rule_factory import RuleFactory
 
 
 class ResourceTagger:
-    """
-    Tag resources within cloud provider
-    """
+    """Tag resources within cloud provider."""
 
     @staticmethod
     def process_queue_message(message):
-        """
-        Apply tags to resources specified by message
+        """Apply tags to resources specified by message.
+
         :param message: Payload of resources
         :return: Tags written, tags skipped
         """
@@ -23,7 +21,8 @@ class ResourceTagger:
         table_storage = ResourceStorageFactory.create()
 
         resource = Resource(msg_json["resource"])
-        resource_service = ResourceServiceFactory.create(resource.provider_type, resource.account_id)
+        resource_service = ResourceServiceFactory.create(
+            resource.provider_type, resource.account_id)
 
         tag_processor = ResourceTagProcessor(resource_service)
 
@@ -34,8 +33,8 @@ class ResourceTagger:
 
     @staticmethod
     def process_tag_rules():
-        """
-        Get rules from rules factory and run them
+        """Get rules from rules factory and run them.
+
         :return: Number of matches found and applied tags to
         """
         resource_storage = ResourceStorageFactory.create()
@@ -53,9 +52,8 @@ class ResourceTagger:
 
 
 class ResourceTagProcessor:
-    """
-    Writes tags to cloud resources
-    """
+    """Writes tags to cloud resources."""
+
     def __init__(self, resource_service: ResourceService):
         self._resource_service = resource_service
         self._tags_written = 0
@@ -76,8 +74,8 @@ class ResourceTagProcessor:
         return self._tags_skipped
 
     def execute(self, resource: Resource, tags: dict, overwrite=False):
-        """
-        Execute tagging of resource
+        """Execute tagging of resource.
+
         :param resource: Resource to tag
         :param tags: tags to apply
         :param overwrite: True if overwrite of existing tags is desired, default False
@@ -102,8 +100,6 @@ class ResourceTagProcessor:
             logging.info(f"Wrote {self._tags_written} tags to {resource.id}.")
 
     def reset(self):
-        """
-        Reset the tags written and tags skipped to 0
-        """
+        """Reset the tags written and tags skipped to 0."""
         self._tags_written = 0
         self._tags_skipped = 0

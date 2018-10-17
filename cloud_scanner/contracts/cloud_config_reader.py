@@ -5,15 +5,13 @@ from .storage_container import StorageContainer
 
 
 class CloudConfigReader:
-    """
-    Helper to read cloud configuration file
-    """
+    """Helper to read cloud configuration file."""
     def __init__(self, container_service: StorageContainer):
         self._container_service = container_service
 
     def read_config(self):
-        """
-        Read cloud configuration file from storage container
+        """Read cloud configuration file from storage container.
+
         :return: json payload of cloud config
         """
         # get a list of files in the blob container

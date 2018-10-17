@@ -3,8 +3,8 @@ from .table_storage import TableStorage
 
 
 def register_resource_storage(service_name, service_factory):
-    """
-    Register resource storage service
+    """Register resource storage service.
+
     :param service_name: Name of service
     :param service_factory: Function to instantiate service
     :return: None
@@ -19,15 +19,13 @@ def register_resource_storage(service_name, service_factory):
 
 
 class ResourceStorageFactory:
-    """
-    Instantiate resource storage services
-    """
+    """Instantiate resource storage services."""
     _factories = {}
 
     @classmethod
     def create(cls) -> TableStorage:
-        """
-        Create resource storage service
+        """Create resource storage service.
+
         :return: Resource storage service object
         """
         service_type = ProcessConfig().resource_storage_type
@@ -38,8 +36,8 @@ class ResourceStorageFactory:
 
     @classmethod
     def register_factory(cls, service_type: str, factory_func):
-        """
-        Register factory
+        """Register factory.
+
         :param service_type: type of service of factory
         :param factory_func: Function to intantiate service
         :return: None
