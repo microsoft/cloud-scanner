@@ -16,9 +16,9 @@ class CloudConfigGenerator:
     def generate_config(self, providers_types: list, resource_types: list):
         """
         Generate cloud configuration payload
-        :param providers_types: comma-separated list of cloud providers (aws,azure,gcp)
-        :param resource_types: comma-separated list of cloud resource types
-        :return: str of Json payload
+            :param providers_types: comma-separated list of cloud providers (aws,azure,gcp)
+            :param resource_types: comma-separated list of cloud resource types
+            :return: str of Json payload
         """
         providers = []
 
@@ -50,8 +50,8 @@ class CloudConfigGenerator:
     def output_config(self, config):
         """
         Upload config payload to Storage container
-        :param config: json payload of config
-        :return: None
+            :param config: json payload of config
+            :return: None
         """
         blob_name = 'config-{date:%Y-%m-%d-%H-%M-%S}.json'.format(date=datetime.now())
         self._container.upload_text(blob_name, config)

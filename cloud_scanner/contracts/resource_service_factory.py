@@ -27,9 +27,9 @@ class ResourceServiceFactory:
     def create(cls, service_type: str, subscription_id) -> ResourceService:
         """
         Create resource service
-        :param service_type: type of service
-        :param subscription_id: cloud service subscription or account ID
-        :return: Resource service object
+            :param service_type: type of service
+            :param subscription_id: cloud service subscription or account ID
+            :return: Resource service object
         """
         try:
             return cls._factories[service_type](subscription_id)
@@ -40,8 +40,8 @@ class ResourceServiceFactory:
     def register_factory(cls, service_type: str, factory_func):
         """
         Register factory
-        :param service_type: type of service of factory
-        :param factory_func: Function to intantiate service
-        :return: None
+            :param service_type: type of service of factory
+            :param factory_func: Function to intantiate service
+            :return: None
         """
         cls._factories[service_type] = factory_func

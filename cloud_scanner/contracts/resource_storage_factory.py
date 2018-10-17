@@ -28,7 +28,7 @@ class ResourceStorageFactory:
     def create(cls) -> TableStorage:
         """
         Create resource storage service
-        :return: Resource storage service object
+            :return: Resource storage service object
         """
         service_type = ProcessConfig().resource_storage_type
         try:
@@ -40,8 +40,8 @@ class ResourceStorageFactory:
     def register_factory(cls, service_type: str, factory_func):
         """
         Register factory
-        :param service_type: type of service of factory
-        :param factory_func: Function to intantiate service
-        :return: None
+            :param service_type: type of service of factory
+            :param factory_func: Function to intantiate service
+            :return: None
         """
         cls._factories[service_type] = factory_func

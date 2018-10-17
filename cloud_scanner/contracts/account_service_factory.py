@@ -27,8 +27,8 @@ class AccountServiceFactory:
     def create(cls, service_type: str) -> AccountService:
         """
         Create an account service based on service type
-        :param service_type: str
-        :return:
+            :param service_type: str
+            :return:
         """
         try:
             return cls._factories[service_type]()

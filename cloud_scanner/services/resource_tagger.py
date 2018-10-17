@@ -16,8 +16,8 @@ class ResourceTagger:
     def process_queue_message(message):
         """
         Apply tags to resources specified by message
-        :param message: Payload of resources
-        :return: Tags written, tags skipped
+            :param message: Payload of resources
+            :return: Tags written, tags skipped
         """
         msg_json = message.get_json()
         table_storage = ResourceStorageFactory.create()
@@ -36,7 +36,7 @@ class ResourceTagger:
     def process_tag_rules():
         """
         Get rules from rules factory and run them
-        :return: Number of matches found and applied tags to
+            :return: Number of matches found and applied tags to
         """
         resource_storage = ResourceStorageFactory.create()
         resources = resource_storage.query_list()
@@ -71,16 +71,16 @@ class ResourceTagProcessor:
     @property
     def tags_skipped(self):
         """
-        :return: int number of tags skipped
+            :return: int number of tags skipped
         """
         return self._tags_skipped
 
     def execute(self, resource: Resource, tags: dict, overwrite=False):
         """
         Execute tagging of resource
-        :param resource: Resource to tag
-        :param tags: tags to apply
-        :param overwrite: True if overwrite of existing tags is desired, default False
+            :param resource: Resource to tag
+            :param tags: tags to apply
+            :param overwrite: True if overwrite of existing tags is desired, default False
         """
         # Store tags written during this single execution
         local_written = 0

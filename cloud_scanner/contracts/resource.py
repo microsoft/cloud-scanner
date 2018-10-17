@@ -32,8 +32,8 @@ class Resource(ABC):
         """
         Handle any non-json serializable types.
 
-        :param o: object
-        :return: str of json
+            :param o: object
+            :return: str of json
         """
         if isinstance(o, datetime.datetime):
             return o.__str__()
@@ -41,8 +41,8 @@ class Resource(ABC):
     def _generate_hash(self, data):
         """
         Generate a hash of data provided
-        :param data: Data to use for hash
-        :return: Sha-1 hash of data
+            :param data: Data to use for hash
+            :return: Sha-1 hash of data
         """
         stringified = json.dumps(data, ensure_ascii=True,
                                  sort_keys=True,
@@ -53,7 +53,7 @@ class Resource(ABC):
     def _get_tag_guid(self):
         """
         Get GUID for tag
-        :return: GUID
+            :return: GUID
         """
         tag_guid = self._tags.get('TagGuid', None)
         if tag_guid is None:
@@ -63,56 +63,56 @@ class Resource(ABC):
     @property
     def raw(self):
         """
-        :return: raw resource data
+            :return: raw resource data
         """
         return self._raw
 
     @property
     def id(self):
         """
-        :return: resource ID
+            :return: resource ID
         """
         return self._id
 
     @property
     def environment(self):
         """
-        :return: environment of resource
+            :return: environment of resource
         """
         return self._environment
 
     @property
     def app_name(self):
         """
-        :return: app name
+            :return: app name
         """
         return self._app_name
 
     @property
     def tag_guid(self):
         """
-        :return: guid of tag
+            :return: guid of tag
         """
         return self._tag_guid
 
     @property
     def tag_name(self):
         """
-        :return: name of tag
+            :return: name of tag
         """
         return self._tag_name
 
     @property
     def account_id(self):
         """
-        :return: account ID for account resource lives in
+            :return: account ID for account resource lives in
         """
         return self._account_id
 
     @property
     def name(self):
         """
-        :return: name of resource
+            :return: name of resource
         """
         return self._name
 
@@ -120,22 +120,22 @@ class Resource(ABC):
     def name(self, value):
         """
         Set name of resource
-        :param value: new name
-        :return: None
+            :param value: new name
+            :return: None
         """
         self._name = value
 
     @property
     def type(self):
         """
-        :return: resource type
+            :return: resource type
         """
         return self._type
 
     @property
     def location(self):
         """
-        :return: location of resource
+            :return: location of resource
         """
         return self._location
 
@@ -143,15 +143,15 @@ class Resource(ABC):
     def location(self, value):
         """
         Set location of resource
-        :param value: location
-        :return: None
+            :param value: location
+            :return: None
         """
         self._location = value
 
     @property
     def tags(self):
         """
-        :return: Dictionary of tags
+            :return: Dictionary of tags
         """
         return self._tags
 
@@ -159,15 +159,15 @@ class Resource(ABC):
     def tags(self, value):
         """
         Set tags for resource
-        :param value: tags dictionary
-        :return: None
+            :param value: tags dictionary
+            :return: None
         """
         self._tags = value
 
     @property
     def provider_type(self):
         """
-        :return: Resource provider type
+            :return: Resource provider type
         """
         return self._provider_type
 
@@ -175,15 +175,15 @@ class Resource(ABC):
     def provider_type(self, provider_type):
         """
         Set resource provider type
-        :param provider_type: new provider type for resource
-        :return: None
+            :param provider_type: new provider type for resource
+            :return: None
         """
         self._provider_type = provider_type
 
     def to_normalized_dict(self):
         """
         Create normalized dictionary for resource across cloud providers
-        :return: Normalized dictionary
+            :return: Normalized dictionary
         """
 
         out_dict = copy.deepcopy(self.raw) # Populate with full meta-data?
@@ -207,7 +207,7 @@ class Resource(ABC):
 
     def to_dict(self):
         """
-        :return: Dictionary with resource data
+            :return: Dictionary with resource data
         """
         return {
             'id': self.id,
@@ -221,7 +221,7 @@ class Resource(ABC):
 
     def to_str(self):
         """
-        :return: JSON str of resource dictionary
+            :return: JSON str of resource dictionary
         """
         return json.dumps(self.to_dict())
 

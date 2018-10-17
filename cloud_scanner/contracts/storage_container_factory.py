@@ -28,7 +28,7 @@ class StorageContainerFactory:
     def create(cls) -> StorageContainer:
         """
         Create storage container service
-        :return: Storage container service object
+            :return: Storage container service object
         """
         service_type = ProcessConfig().storage_container_type
         try:
@@ -40,8 +40,8 @@ class StorageContainerFactory:
     def register_factory(cls, service_type: str, factory_func):
         """
         Register factory
-        :param service_type: type of service of factory
-        :param factory_func: Function to intantiate service
-        :return: None
+            :param service_type: type of service of factory
+            :param factory_func: Function to intantiate service
+            :return: None
         """
         cls._factories[service_type] = factory_func

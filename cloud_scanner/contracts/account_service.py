@@ -8,6 +8,6 @@ class AccountService(ABC):
 
     def get_accounts(self):
         """
-        :return: list of accounts from cloud provider
+            :return: list of accounts from cloud provider
         """
         raise NotImplementedError("accounts is not implemented")
