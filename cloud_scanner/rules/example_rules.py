@@ -10,6 +10,7 @@ def create_rule(cls):
     queue = QueueFactory.create(queue_name)
     return cls(queue)
 
+
 @register_rule(create_rule)
 class ExampleRule1(TagUpdateRule):
     def check_condition(self, resource: Resource) -> bool:
@@ -44,4 +45,3 @@ class ExampleRule4(TagUpdateRule):
 
     def get_tags(self, resource: Resource):
         return {"Location": resource.location}
-

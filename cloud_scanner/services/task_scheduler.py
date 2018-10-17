@@ -1,21 +1,19 @@
 import json
 import logging
 
-from cloud_scanner.contracts import CloudConfigReader
-from cloud_scanner.contracts.queue_factory import QueueFactory
-from cloud_scanner.contracts.storage_container_factory import StorageContainerFactory
+from cloud_scanner.contracts import (
+    CloudConfigReader, QueueFactory, StorageContainerFactory
+)
 from cloud_scanner.config.process_config import ProcessConfig
 
 
 class TaskScheduler:
-    """
-    Schedule tasks for resource scanning
-    """
+    """Schedule tasks for resource scanning."""
 
     @staticmethod
     def execute():
-        """
-        Execute scheduling of tasks
+        """Execute scheduling of tasks.
+
         :return: int number of tasks scheduled
         """
 
@@ -40,8 +38,8 @@ class TaskScheduler:
 
     @staticmethod
     def _create_tasks(provider_type: str, config):
-        """
-        Create tasks for scanning
+        """Create tasks for scanning.
+
         :param provider_type: Cloud provider (azure or aws)
         :param config: Pulled from existing configuration file
         :return: Tasks for scanning

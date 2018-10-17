@@ -2,9 +2,7 @@ from abc import ABC
 
 
 class AccountService(ABC):
-    """
-    Service to retrieve account information for cloud provider
-    """
+    """Service to retrieve account information for cloud provider."""
 
     def get_accounts(self):
         """
