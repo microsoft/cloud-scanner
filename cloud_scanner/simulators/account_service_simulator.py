@@ -7,18 +7,14 @@ class AccountServiceSimulator(AccountService):
     """
     Simulator of AccoutService
     """
+
     def get_accounts(self):
         """
         Get fake accounts
-        :return: List of fake accounts
-        [
-            {
-                'subscriptionId': '...',
-                'displayName': '...'
-            },
-            ...
-        ]
+
+        :returns: List of fake accounts
         """
+
         return [
             {
                 "subscriptionId": "00000000-0000-0000-0000-000000000000",
