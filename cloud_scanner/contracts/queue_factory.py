@@ -33,7 +33,10 @@ class QueueFactory:
         """
         # @TODO: No way of using more than one type of queue type since service_type is being read from config instead of being passed in/dynamic.
         service_type = ProcessConfig().queue_type
-        return cls._factories[service_type](queue_name)
+        try:
+            return cls._factories[service_type](queue_name)
+        except KeyError:
+            raise KeyError(f"Service type {service_type} is not registered for Queue Service")
 
     @classmethod
     def register_factory(cls, service_type: str, factory_func):

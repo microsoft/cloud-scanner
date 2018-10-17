@@ -31,7 +31,10 @@ class ResourceServiceFactory:
         :param subscription_id: cloud service subscription or account ID
         :return: Resource service object
         """
-        return cls._factories[service_type](subscription_id)
+        try:
+            return cls._factories[service_type](subscription_id)
+        except KeyError:
+            raise KeyError(f"Service type {service_type} is not registered for Resource Service")
 
     @classmethod
     def register_factory(cls, service_type: str, factory_func):

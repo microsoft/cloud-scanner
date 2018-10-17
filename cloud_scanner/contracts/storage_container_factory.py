@@ -31,7 +31,10 @@ class StorageContainerFactory:
         :return: Storage container service object
         """
         service_type = ProcessConfig().storage_container_type
-        return cls._factories[service_type]()
+        try:
+            return cls._factories[service_type]()
+        except KeyError:
+            raise KeyError(f"Service type {service_type} is not registered for Storage Container Service")
 
     @classmethod
     def register_factory(cls, service_type: str, factory_func):
