@@ -6,7 +6,7 @@ with open("README.md", "r") as fh:
 setup(name='cloud_scanner',
       version='0.0.1',
       description='Core package for scanning cloud resources across providers',
-      url='https://github.com/Microsoft/cloud-scanner',
+      url='https://microsoft.github.io/cloud-scanner',
       author='Microsoft',
       author_email='tanner.barlow@microsoft.com,wallace.breza@microsoft.com',
       license='MIT',
