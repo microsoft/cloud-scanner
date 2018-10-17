@@ -32,10 +32,10 @@ class ExampleRule2(TagUpdateRule):
 @register_rule(create_rule)
 class ExampleRule3(TagUpdateRule):
     def check_condition(self, resource: Resource) -> bool:
-        return True if "nike" in resource.name else False
+        return True if "Microsoft" in resource.name else False
 
     def get_tags(self, resource: Resource):
-        return {"Company": "Nike"}
+        return {"Company": "Microsoft"}
 
 
 @register_rule(create_rule)
