@@ -5,7 +5,8 @@ python:
 stages:
   - compile
   - test
-  - deploy
+  - name deploy
+    if: branch = wabrez/more-travis-updates
 
 install:
   - pip install -r requirements.txt
