@@ -5,7 +5,7 @@ python:
 stages:
   - compile
   - test
-  - name deploy
+  - name: deploy
     if: branch = wabrez/more-travis-updates
 
 install:
