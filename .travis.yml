@@ -11,40 +11,36 @@ stages:
 install:
   - pip install -r requirements.txt
 
-script: pytest
+script: 
+  - pytest
 
 before_deploy: 
   # Generate sphinx output
   - make sphinx
+  
   # Generate pypi package
   - pip install --user --upgrade setuptools wheel
   - python setup.py sdist bdist_wheel
 
-jobs:
-  include:
-    - stage: test
-      # Run unit tests
-      name: "Unit Tests"
-      script: pytest
-      # Run integration tests
-      name: "Integration Tests"
-      script: skip
-    - stage: deploy
-      # Deploy Sphinx Docs
-      name: "Sphinx Documentation"
-      script: skip
-      provider: pages
-      local-dir: docs/build/html
-      skip-cleanup: true
-      github-token: $GITHUB_TOKEN
-      keep-history: true
-      # Deploy Pypi Package
-      name: "PyPi Packages"
-      skip_cleanup: true
-      script: skip
-      provider: pypi
-      user:
-        secure: "Yav7gi+Ilvu9Ji+j8PIAlBtTRP/wVgLrRWuFC0qy69eL1qMbjiL0DrILcJJl78fLaJyRepjoWFog2/GFQ1z5Tv5sqy2H9k7aZlLAWc/cQ5nsU78iGput5RD512C5ZnjrfDXPwELzosE9BtzRqP8SwvNtExUscirb8AyJPvpNu4O9F00L0anY9RUXOO+ZOGx5GiNDjtOyedxMp4Za+ek3uhEHmRSShe/7XAM3g7xXIlokeV6r2bwc8Ybfy6JdO0dS76NSGL3qNtSN5uROtmS8FoZ0H2sNGW4EDjoLxI2G08dFlMOMn3E3KGfQYodRrOlYID1wMgFpcyOFptkwVMM77BbEB3TXcFXTZIOJNftY78NRmXDrvBgDuiXHB0bWKLLuBHd+WwN3VBpCG6fQf5Mc8kWLQt0Jmvm8U0tfSV6opbGBy1x17zi1D9N4/9T2wETSZahrxTM7Y2zPc6Jvr1qXUwo6vF5Imvk4Wzi9/0ABe0cQ/NdVRvBvYrHXusTb2vzCePTmmXbGv4vnjORC9rJsRfo9e2K9EcHlazRk7eLwleWSRvvacTgIuUNjKlPcGdIWVv+fqhiVVuoGdHAkSzWJyDab1ej/sAlslYS/lx+5sGzomG0EBtces1+ou4JOP5iAhQ9haAZm2dPmopjp4c40liiRJG7YDN3CfTln540EVNw="
-      password:
-        secure: "LIzXU4HxzlL/TUcFCsOKkiatgc+Dr8s03xBRhGS4D53S153oS4cEzcMEvlbpKnblM+gmRJvJ+AzQrOPs/8pIRNTLWrGkD2dJKHohCJ6mhFUuwLATF1IcjseUxWeXX5KR5Qbad/f/PuA+3RaoQzSxJ77uTjxKj3hyqDQeQl6BdpaEJG8TaK3P5h9eIHXrC7ghVBSN4/DOBOpjggr1bsTG/UXlv6KLvPFVHn1DUffm1B5Hl4cDos8dV/jqdtIBGfJmoSzNP6DvjvpSl2rDeG/LZ+RLs5Wzwf4m++4Y1VuI5bAlPFg8egMLD0HYQaLrhkAKsZI3qUZvniQcadnU0EcgXE3uKSW0eG8IG0hMiTlFENL/BeSkaXHT1nh7EBxoOLWn2Vf5RqQfU7ohzxQzEkFL8UhIU6aA9boCoFFm4/uk//VuFbMQCd+Z9canU1bDw4V02NHVZdwTbIMtGy/zQLTJHyeAHeiw1ujl3+eleLG1wl2A+Il27AJEzi5qxZnC5XUqq3r5DPOtDoazcub4vd0AmEo4VjUoliNhbk76EC024k2dkDEUktMjd/p2WLVU4y61GwGmMiI6x9RpRNnhHOhWmtylObUUhMN4ANbDUkHJmiT/b0I2Y+P6GBusCpHGyneBmI9gpXF8Xb0Am5DlhTh+qlrhAfbaRJ+ueUvzm3itLYw="
-      server: https://test.pypi.org/legacy/
+deploy:
+  skip_cleanup: true
+
+  # Deploy Sphinx Docs
+  name: "Sphinx Documentation"
+  script: skip
+  provider: pages
+  local-dir: docs/build/html
+  github-token: $GITHUB_TOKEN
+  keep-history: true
+  
+  # Deploy Pypi Package
+  name: "PyPi Packages"
+  script: skip
+  provider: pypi
+  user:
+    secure: "Yav7gi+Ilvu9Ji+j8PIAlBtTRP/wVgLrRWuFC0qy69eL1qMbjiL0DrILcJJl78fLaJyRepjoWFog2/GFQ1z5Tv5sqy2H9k7aZlLAWc/cQ5nsU78iGput5RD512C5ZnjrfDXPwELzosE9BtzRqP8SwvNtExUscirb8AyJPvpNu4O9F00L0anY9RUXOO+ZOGx5GiNDjtOyedxMp4Za+ek3uhEHmRSShe/7XAM3g7xXIlokeV6r2bwc8Ybfy6JdO0dS76NSGL3qNtSN5uROtmS8FoZ0H2sNGW4EDjoLxI2G08dFlMOMn3E3KGfQYodRrOlYID1wMgFpcyOFptkwVMM77BbEB3TXcFXTZIOJNftY78NRmXDrvBgDuiXHB0bWKLLuBHd+WwN3VBpCG6fQf5Mc8kWLQt0Jmvm8U0tfSV6opbGBy1x17zi1D9N4/9T2wETSZahrxTM7Y2zPc6Jvr1qXUwo6vF5Imvk4Wzi9/0ABe0cQ/NdVRvBvYrHXusTb2vzCePTmmXbGv4vnjORC9rJsRfo9e2K9EcHlazRk7eLwleWSRvvacTgIuUNjKlPcGdIWVv+fqhiVVuoGdHAkSzWJyDab1ej/sAlslYS/lx+5sGzomG0EBtces1+ou4JOP5iAhQ9haAZm2dPmopjp4c40liiRJG7YDN3CfTln540EVNw="
+  password:
+    secure: "LIzXU4HxzlL/TUcFCsOKkiatgc+Dr8s03xBRhGS4D53S153oS4cEzcMEvlbpKnblM+gmRJvJ+AzQrOPs/8pIRNTLWrGkD2dJKHohCJ6mhFUuwLATF1IcjseUxWeXX5KR5Qbad/f/PuA+3RaoQzSxJ77uTjxKj3hyqDQeQl6BdpaEJG8TaK3P5h9eIHXrC7ghVBSN4/DOBOpjggr1bsTG/UXlv6KLvPFVHn1DUffm1B5Hl4cDos8dV/jqdtIBGfJmoSzNP6DvjvpSl2rDeG/LZ+RLs5Wzwf4m++4Y1VuI5bAlPFg8egMLD0HYQaLrhkAKsZI3qUZvniQcadnU0EcgXE3uKSW0eG8IG0hMiTlFENL/BeSkaXHT1nh7EBxoOLWn2Vf5RqQfU7ohzxQzEkFL8UhIU6aA9boCoFFm4/uk//VuFbMQCd+Z9canU1bDw4V02NHVZdwTbIMtGy/zQLTJHyeAHeiw1ujl3+eleLG1wl2A+Il27AJEzi5qxZnC5XUqq3r5DPOtDoazcub4vd0AmEo4VjUoliNhbk76EC024k2dkDEUktMjd/p2WLVU4y61GwGmMiI6x9RpRNnhHOhWmtylObUUhMN4ANbDUkHJmiT/b0I2Y+P6GBusCpHGyneBmI9gpXF8Xb0Am5DlhTh+qlrhAfbaRJ+ueUvzm3itLYw="
+  server: https://test.pypi.org/legacy/
+  on:
+    all_branches: true
