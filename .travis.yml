@@ -5,15 +5,11 @@ python:
 stages:
   - compile
   - test
-  - name: deploy
-    if: branch = master
+  - sphinx
+  - pypi
 
 install:
   - pip install -r requirements.txt
-
-before_deploy: 
-  - pip install --user --upgrade setuptools wheel
-  - python setup.py sdist bdist_wheel
 
 jobs:
   include:
@@ -21,11 +17,16 @@ jobs:
       name: "Unit Tests"
       script: 
         - pytest
-    - stage: deploy
+    - stage: sphinx
       skip_cleanup: true
       name: "Sphinx Documentation"
       script: sh deploy.sh
+    - stage: pypi
+      skip_cleanup: true
       name: "PyPi Packages"
+      before_deploy:
+        - pip install --user --upgrade setuptools wheel
+        - python setup.py sdist bdist_wheel
       script: skip
       provider: pypi
       user:
