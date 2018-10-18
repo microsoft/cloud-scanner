@@ -10,6 +10,8 @@ stages:
 install:
   - pip install -r requirements.txt
 
+script: pytest
+
 before_deploy: 
   # Generate sphinx output
   - make sphinx
@@ -20,14 +22,18 @@ before_deploy:
 jobs:
   include:
     - stage: test
+      # Run unit tests
       name: "Unit Tests"
-      script: 
-        - pytest
+      script: pytest
+      # Run integration tests
+      name: "Integration Tests"
+      script: skip
     - stage: deploy
       # Deploy Sphinx Docs
       name: "Sphinx Documentation"
       script: skip
       provider: pages
+      local-dir: docs/build/html
       skip-cleanup: true
       github-token: $GITHUB_TOKEN
       keep-history: true
