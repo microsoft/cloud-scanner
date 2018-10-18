@@ -1,0 +1,1068 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>cloud_scanner.contracts package &#8212; Cloud Scanner 0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="cloud_scanner.helpers package" href="cloud_scanner.helpers.html" />
+    <link rel="prev" title="cloud_scanner.config package" href="cloud_scanner.config.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="cloud-scanner-contracts-package">
+<h1>cloud_scanner.contracts package<a class="headerlink" href="#cloud-scanner-contracts-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-cloud_scanner.contracts.account_service">
+<span id="cloud-scanner-contracts-account-service-module"></span><h2>cloud_scanner.contracts.account_service module<a class="headerlink" href="#module-cloud_scanner.contracts.account_service" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="cloud_scanner.contracts.account_service.AccountService">
+<em class="property">class </em><code class="descclassname">cloud_scanner.contracts.account_service.</code><code class="descname">AccountService</code><a class="headerlink" href="#cloud_scanner.contracts.account_service.AccountService" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">abc.ABC</span></code></p>
+<p>Service to retrieve account information for cloud provider.</p>
+<dl class="method">
+<dt id="cloud_scanner.contracts.account_service.AccountService.get_accounts">
+<code class="descname">get_accounts</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cloud_scanner.contracts.account_service.AccountService.get_accounts" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">list of accounts from cloud provider</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-cloud_scanner.contracts.account_service_factory">
+<span id="cloud-scanner-contracts-account-service-factory-module"></span><h2>cloud_scanner.contracts.account_service_factory module<a class="headerlink" href="#module-cloud_scanner.contracts.account_service_factory" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="cloud_scanner.contracts.account_service_factory.AccountServiceFactory">
+<em class="property">class </em><code class="descclassname">cloud_scanner.contracts.account_service_factory.</code><code class="descname">AccountServiceFactory</code><a class="headerlink" href="#cloud_scanner.contracts.account_service_factory.AccountServiceFactory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Factory to instantiate account services for cloud providers.</p>
+<dl class="classmethod">
+<dt id="cloud_scanner.contracts.account_service_factory.AccountServiceFactory.create">
+<em class="property">classmethod </em><code class="descname">create</code><span class="sig-paren">(</span><em>service_type: str</em><span class="sig-paren">)</span> &#x2192; cloud_scanner.contracts.account_service.AccountService<a class="headerlink" href="#cloud_scanner.contracts.account_service_factory.AccountServiceFactory.create" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create an account service based on service type.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>service_type</strong> – str</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="cloud_scanner.contracts.account_service_factory.AccountServiceFactory.get_providers">
+<em class="property">classmethod </em><code class="descname">get_providers</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cloud_scanner.contracts.account_service_factory.AccountServiceFactory.get_providers" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="classmethod">
+<dt id="cloud_scanner.contracts.account_service_factory.AccountServiceFactory.register_factory">
+<em class="property">classmethod </em><code class="descname">register_factory</code><span class="sig-paren">(</span><em>service_type: str</em>, <em>factory_func</em><span class="sig-paren">)</span><a class="headerlink" href="#cloud_scanner.contracts.account_service_factory.AccountServiceFactory.register_factory" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="cloud_scanner.contracts.account_service_factory.register_account_service">
+<code class="descclassname">cloud_scanner.contracts.account_service_factory.</code><code class="descname">register_account_service</code><span class="sig-paren">(</span><em>service_name</em>, <em>service_factory</em><span class="sig-paren">)</span><a class="headerlink" href="#cloud_scanner.contracts.account_service_factory.register_account_service" title="Permalink to this definition">¶</a></dt>
+<dd><p>Registers an account service for a cloud provider.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>service_name</strong> – name of cloud provider (‘aws’ or ‘azure’)</li>
+<li><strong>service_factory</strong> – </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-cloud_scanner.contracts.cloud_config_generator">
+<span id="cloud-scanner-contracts-cloud-config-generator-module"></span><h2>cloud_scanner.contracts.cloud_config_generator module<a class="headerlink" href="#module-cloud_scanner.contracts.cloud_config_generator" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="cloud_scanner.contracts.cloud_config_generator.CloudConfigGenerator">
+<em class="property">class </em><code class="descclassname">cloud_scanner.contracts.cloud_config_generator.</code><code class="descname">CloudConfigGenerator</code><span class="sig-paren">(</span><em>storage_container: cloud_scanner.contracts.storage_container.StorageContainer</em><span class="sig-paren">)</span><a class="headerlink" href="#cloud_scanner.contracts.cloud_config_generator.CloudConfigGenerator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Generate cloud configuration file for process workflow.</p>
+<dl class="method">
+<dt id="cloud_scanner.contracts.cloud_config_generator.CloudConfigGenerator.generate_config">
+<code class="descname">generate_config</code><span class="sig-paren">(</span><em>providers_types: list</em>, <em>resource_types: list</em><span class="sig-paren">)</span><a class="headerlink" href="#cloud_scanner.contracts.cloud_config_generator.CloudConfigGenerator.generate_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate cloud configuration payload.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>providers_types</strong> – comma-separated list of cloud providers (azure, aws, gcp)</li>
+<li><strong>resource_types</strong> – comma-separated list of cloud resource types</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">str of Json payload</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cloud_scanner.contracts.cloud_config_generator.CloudConfigGenerator.output_config">
+<code class="descname">output_config</code><span class="sig-paren">(</span><em>config</em><span class="sig-paren">)</span><a class="headerlink" href="#cloud_scanner.contracts.cloud_config_generator.CloudConfigGenerator.output_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Upload config payload to Storage container.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>config</strong> – json payload of config</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-cloud_scanner.contracts.cloud_config_reader">
+<span id="cloud-scanner-contracts-cloud-config-reader-module"></span><h2>cloud_scanner.contracts.cloud_config_reader module<a class="headerlink" href="#module-cloud_scanner.contracts.cloud_config_reader" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="cloud_scanner.contracts.cloud_config_reader.CloudConfigReader">
+<em class="property">class </em><code class="descclassname">cloud_scanner.contracts.cloud_config_reader.</code><code class="descname">CloudConfigReader</code><span class="sig-paren">(</span><em>container_service: cloud_scanner.contracts.storage_container.StorageContainer</em><span class="sig-paren">)</span><a class="headerlink" href="#cloud_scanner.contracts.cloud_config_reader.CloudConfigReader" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Helper to read cloud configuration file.</p>
+<dl class="method">
+<dt id="cloud_scanner.contracts.cloud_config_reader.CloudConfigReader.read_config">
+<code class="descname">read_config</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cloud_scanner.contracts.cloud_config_reader.CloudConfigReader.read_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read cloud configuration file from storage container.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">json payload of cloud config</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-cloud_scanner.contracts.queue">
+<span id="cloud-scanner-contracts-queue-module"></span><h2>cloud_scanner.contracts.queue module<a class="headerlink" href="#module-cloud_scanner.contracts.queue" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="cloud_scanner.contracts.queue.Queue">
+<em class="property">class </em><code class="descclassname">cloud_scanner.contracts.queue.</code><code class="descname">Queue</code><a class="headerlink" href="#cloud_scanner.contracts.queue.Queue" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">abc.ABC</span></code></p>
+<p>Generic Queue interface.</p>
+<p>Any queue implementation must expose the methods detailed in this
+interface.</p>
+<dl class="method">
+<dt id="cloud_scanner.contracts.queue.Queue.peek">
+<code class="descname">peek</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cloud_scanner.contracts.queue.Queue.peek" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the first message flom the queue, leaving the message in the
+queue.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">First message in the queue</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cloud_scanner.contracts.queue.Queue.pop">
+<code class="descname">pop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cloud_scanner.contracts.queue.Queue.pop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Pops the first message fom the queue and returns it.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The first message in the queue</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cloud_scanner.contracts.queue.Queue.push">
+<code class="descname">push</code><span class="sig-paren">(</span><em>message</em><span class="sig-paren">)</span><a class="headerlink" href="#cloud_scanner.contracts.queue.Queue.push" title="Permalink to this definition">¶</a></dt>
+<dd><p>Pushes a message onto the queue.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>message</strong> – The message that will be pushed onto the queue</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-cloud_scanner.contracts.queue_factory">
+<span id="cloud-scanner-contracts-queue-factory-module"></span><h2>cloud_scanner.contracts.queue_factory module<a class="headerlink" href="#module-cloud_scanner.contracts.queue_factory" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="cloud_scanner.contracts.queue_factory.QueueFactory">
+<em class="property">class </em><code class="descclassname">cloud_scanner.contracts.queue_factory.</code><code class="descname">QueueFactory</code><a class="headerlink" href="#cloud_scanner.contracts.queue_factory.QueueFactory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Singleton factory responsible for creating queues.</p>
+<dl class="classmethod">
+<dt id="cloud_scanner.contracts.queue_factory.QueueFactory.create">
+<em class="property">classmethod </em><code class="descname">create</code><span class="sig-paren">(</span><em>queue_name: str</em><span class="sig-paren">)</span> &#x2192; cloud_scanner.contracts.queue.Queue<a class="headerlink" href="#cloud_scanner.contracts.queue_factory.QueueFactory.create" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a queue with ‘queue_name’ of type specified in the config
+“QUEUE_TYPE” property.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>queue_name</strong> – Name of the queue</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Implemented instance of the Queue contract</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="cloud_scanner.contracts.queue_factory.QueueFactory.register_factory">
+<em class="property">classmethod </em><code class="descname">register_factory</code><span class="sig-paren">(</span><em>service_type: str</em>, <em>factory_func</em><span class="sig-paren">)</span><a class="headerlink" href="#cloud_scanner.contracts.queue_factory.QueueFactory.register_factory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Utility function used to register a type of queue with a string
+name.</p>
+<p>Primarily used by the ‘register_queue_service’ decorator.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="cloud_scanner.contracts.queue_factory.register_queue_service">
+<code class="descclassname">cloud_scanner.contracts.queue_factory.</code><code class="descname">register_queue_service</code><span class="sig-paren">(</span><em>service_name</em>, <em>service_factory</em><span class="sig-paren">)</span><a class="headerlink" href="#cloud_scanner.contracts.queue_factory.register_queue_service" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decorator used to register an implementation of a queue with the queue
+factory.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>service_name</strong> – The name to register this type of queue as.</li>
+<li><strong>service_factory</strong> – A function or lambda that takes a queue_name
+(as a string) and will return an instance of the queue implementation.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-cloud_scanner.contracts.resource">
+<span id="cloud-scanner-contracts-resource-module"></span><h2>cloud_scanner.contracts.resource module<a class="headerlink" href="#module-cloud_scanner.contracts.resource" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="cloud_scanner.contracts.resource.Resource">
+<em class="property">class </em><code class="descclassname">cloud_scanner.contracts.resource.</code><code class="descname">Resource</code><span class="sig-paren">(</span><em>d: dict</em><span class="sig-paren">)</span><a class="headerlink" href="#cloud_scanner.contracts.resource.Resource" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">abc.ABC</span></code></p>
+<p>Base class for cloud resource object.</p>
+<dl class="attribute">
+<dt id="cloud_scanner.contracts.resource.Resource.account_id">
+<code class="descname">account_id</code><a class="headerlink" href="#cloud_scanner.contracts.resource.Resource.account_id" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">account ID for account resource lives in</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cloud_scanner.contracts.resource.Resource.app_name">
+<code class="descname">app_name</code><a class="headerlink" href="#cloud_scanner.contracts.resource.Resource.app_name" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">app name</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cloud_scanner.contracts.resource.Resource.environment">
+<code class="descname">environment</code><a class="headerlink" href="#cloud_scanner.contracts.resource.Resource.environment" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">environment of resource</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cloud_scanner.contracts.resource.Resource.id">
+<code class="descname">id</code><a class="headerlink" href="#cloud_scanner.contracts.resource.Resource.id" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">resource ID</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cloud_scanner.contracts.resource.Resource.location">
+<code class="descname">location</code><a class="headerlink" href="#cloud_scanner.contracts.resource.Resource.location" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">location of resource</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cloud_scanner.contracts.resource.Resource.name">
+<code class="descname">name</code><a class="headerlink" href="#cloud_scanner.contracts.resource.Resource.name" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">name of resource</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cloud_scanner.contracts.resource.Resource.provider_type">
+<code class="descname">provider_type</code><a class="headerlink" href="#cloud_scanner.contracts.resource.Resource.provider_type" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Resource provider type</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cloud_scanner.contracts.resource.Resource.raw">
+<code class="descname">raw</code><a class="headerlink" href="#cloud_scanner.contracts.resource.Resource.raw" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">raw resource data</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cloud_scanner.contracts.resource.Resource.tag_guid">
+<code class="descname">tag_guid</code><a class="headerlink" href="#cloud_scanner.contracts.resource.Resource.tag_guid" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">guid of tag</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cloud_scanner.contracts.resource.Resource.tag_name">
+<code class="descname">tag_name</code><a class="headerlink" href="#cloud_scanner.contracts.resource.Resource.tag_name" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">name of tag</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cloud_scanner.contracts.resource.Resource.tags">
+<code class="descname">tags</code><a class="headerlink" href="#cloud_scanner.contracts.resource.Resource.tags" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Dictionary of tags</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cloud_scanner.contracts.resource.Resource.to_dict">
+<code class="descname">to_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cloud_scanner.contracts.resource.Resource.to_dict" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Dictionary with resource data</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cloud_scanner.contracts.resource.Resource.to_normalized_dict">
+<code class="descname">to_normalized_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cloud_scanner.contracts.resource.Resource.to_normalized_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create normalized dictionary for resource across cloud providers.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Normalized dictionary</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cloud_scanner.contracts.resource.Resource.to_str">
+<code class="descname">to_str</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cloud_scanner.contracts.resource.Resource.to_str" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">JSON str of resource dictionary</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cloud_scanner.contracts.resource.Resource.type">
+<code class="descname">type</code><a class="headerlink" href="#cloud_scanner.contracts.resource.Resource.type" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">resource type</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-cloud_scanner.contracts.resource_service">
+<span id="cloud-scanner-contracts-resource-service-module"></span><h2>cloud_scanner.contracts.resource_service module<a class="headerlink" href="#module-cloud_scanner.contracts.resource_service" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="cloud_scanner.contracts.resource_service.ResourceFilter">
+<em class="property">class </em><code class="descclassname">cloud_scanner.contracts.resource_service.</code><code class="descname">ResourceFilter</code><a class="headerlink" href="#cloud_scanner.contracts.resource_service.ResourceFilter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">abc.ABC</span></code></p>
+<p>Base class for a resource filter.</p>
+<dl class="method">
+<dt id="cloud_scanner.contracts.resource_service.ResourceFilter.normalized_filter">
+<code class="descname">normalized_filter</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cloud_scanner.contracts.resource_service.ResourceFilter.normalized_filter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Not implemented in this class.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="cloud_scanner.contracts.resource_service.ResourceService">
+<em class="property">class </em><code class="descclassname">cloud_scanner.contracts.resource_service.</code><code class="descname">ResourceService</code><a class="headerlink" href="#cloud_scanner.contracts.resource_service.ResourceService" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">abc.ABC</span></code></p>
+<p>Base class for resource service.</p>
+<dl class="method">
+<dt id="cloud_scanner.contracts.resource_service.ResourceService.get_filter">
+<code class="descname">get_filter</code><span class="sig-paren">(</span><em>payload</em><span class="sig-paren">)</span> &#x2192; cloud_scanner.contracts.resource_service.ResourceFilter<a class="headerlink" href="#cloud_scanner.contracts.resource_service.ResourceService.get_filter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get filter object based on payload Not implemented in this class.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cloud_scanner.contracts.resource_service.ResourceService.get_resources">
+<code class="descname">get_resources</code><span class="sig-paren">(</span><em>filter: cloud_scanner.contracts.resource_service.ResourceFilter = None</em><span class="sig-paren">)</span><a class="headerlink" href="#cloud_scanner.contracts.resource_service.ResourceService.get_resources" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get resources based on filter Not implemented in this class.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="cloud_scanner.contracts.resource_service.ResourceService.name">
+<code class="descname">name</code><a class="headerlink" href="#cloud_scanner.contracts.resource_service.ResourceService.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Name of resource service Not implemented in this class.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cloud_scanner.contracts.resource_service.ResourceService.update_resource">
+<code class="descname">update_resource</code><span class="sig-paren">(</span><em>resource</em><span class="sig-paren">)</span><a class="headerlink" href="#cloud_scanner.contracts.resource_service.ResourceService.update_resource" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update resource within cloud service provider Not implemented in
+this class.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-cloud_scanner.contracts.resource_service_factory">
+<span id="cloud-scanner-contracts-resource-service-factory-module"></span><h2>cloud_scanner.contracts.resource_service_factory module<a class="headerlink" href="#module-cloud_scanner.contracts.resource_service_factory" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="cloud_scanner.contracts.resource_service_factory.ResourceServiceFactory">
+<em class="property">class </em><code class="descclassname">cloud_scanner.contracts.resource_service_factory.</code><code class="descname">ResourceServiceFactory</code><a class="headerlink" href="#cloud_scanner.contracts.resource_service_factory.ResourceServiceFactory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Instantiate resource services.</p>
+<dl class="classmethod">
+<dt id="cloud_scanner.contracts.resource_service_factory.ResourceServiceFactory.create">
+<em class="property">classmethod </em><code class="descname">create</code><span class="sig-paren">(</span><em>service_type: str</em>, <em>subscription_id</em><span class="sig-paren">)</span> &#x2192; cloud_scanner.contracts.resource_service.ResourceService<a class="headerlink" href="#cloud_scanner.contracts.resource_service_factory.ResourceServiceFactory.create" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create resource service.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>service_type</strong> – type of service</li>
+<li><strong>subscription_id</strong> – cloud service subscription or account ID</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">Resource service object</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="cloud_scanner.contracts.resource_service_factory.ResourceServiceFactory.register_factory">
+<em class="property">classmethod </em><code class="descname">register_factory</code><span class="sig-paren">(</span><em>service_type: str</em>, <em>factory_func</em><span class="sig-paren">)</span><a class="headerlink" href="#cloud_scanner.contracts.resource_service_factory.ResourceServiceFactory.register_factory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Register factory.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>service_type</strong> – type of service of factory</li>
+<li><strong>factory_func</strong> – Function to intantiate service</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="cloud_scanner.contracts.resource_service_factory.register_resource_service">
+<code class="descclassname">cloud_scanner.contracts.resource_service_factory.</code><code class="descname">register_resource_service</code><span class="sig-paren">(</span><em>service_name</em>, <em>service_factory</em><span class="sig-paren">)</span><a class="headerlink" href="#cloud_scanner.contracts.resource_service_factory.register_resource_service" title="Permalink to this definition">¶</a></dt>
+<dd><p>Register resource service.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>service_name</strong> – Name of service</li>
+<li><strong>service_factory</strong> – Function to instantiate service</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-cloud_scanner.contracts.resource_storage_factory">
+<span id="cloud-scanner-contracts-resource-storage-factory-module"></span><h2>cloud_scanner.contracts.resource_storage_factory module<a class="headerlink" href="#module-cloud_scanner.contracts.resource_storage_factory" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="cloud_scanner.contracts.resource_storage_factory.ResourceStorageFactory">
+<em class="property">class </em><code class="descclassname">cloud_scanner.contracts.resource_storage_factory.</code><code class="descname">ResourceStorageFactory</code><a class="headerlink" href="#cloud_scanner.contracts.resource_storage_factory.ResourceStorageFactory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Instantiate resource storage services.</p>
+<dl class="classmethod">
+<dt id="cloud_scanner.contracts.resource_storage_factory.ResourceStorageFactory.create">
+<em class="property">classmethod </em><code class="descname">create</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; cloud_scanner.contracts.table_storage.TableStorage<a class="headerlink" href="#cloud_scanner.contracts.resource_storage_factory.ResourceStorageFactory.create" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create resource storage service.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Resource storage service object</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="cloud_scanner.contracts.resource_storage_factory.ResourceStorageFactory.register_factory">
+<em class="property">classmethod </em><code class="descname">register_factory</code><span class="sig-paren">(</span><em>service_type: str</em>, <em>factory_func</em><span class="sig-paren">)</span><a class="headerlink" href="#cloud_scanner.contracts.resource_storage_factory.ResourceStorageFactory.register_factory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Register factory.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>service_type</strong> – type of service of factory</li>
+<li><strong>factory_func</strong> – Function to intantiate service</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="cloud_scanner.contracts.resource_storage_factory.register_resource_storage">
+<code class="descclassname">cloud_scanner.contracts.resource_storage_factory.</code><code class="descname">register_resource_storage</code><span class="sig-paren">(</span><em>service_name</em>, <em>service_factory</em><span class="sig-paren">)</span><a class="headerlink" href="#cloud_scanner.contracts.resource_storage_factory.register_resource_storage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Register resource storage service.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>service_name</strong> – Name of service</li>
+<li><strong>service_factory</strong> – Function to instantiate service</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-cloud_scanner.contracts.rule">
+<span id="cloud-scanner-contracts-rule-module"></span><h2>cloud_scanner.contracts.rule module<a class="headerlink" href="#module-cloud_scanner.contracts.rule" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="cloud_scanner.contracts.rule.Rule">
+<em class="property">class </em><code class="descclassname">cloud_scanner.contracts.rule.</code><code class="descname">Rule</code><a class="headerlink" href="#cloud_scanner.contracts.rule.Rule" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">abc.ABC</span></code></p>
+<p>Interface of a rule.</p>
+<p>Any implemented rule must define each method described in this
+interface.</p>
+<dl class="method">
+<dt id="cloud_scanner.contracts.rule.Rule.check_condition">
+<code class="descname">check_condition</code><span class="sig-paren">(</span><em>resource: cloud_scanner.contracts.resource.Resource</em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#cloud_scanner.contracts.rule.Rule.check_condition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns True/False whether the rule should be performed on the input
+resource.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>resource</strong> – The resource to check if the rule should be ran upon.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Boolean if the resource should be processed with the rule.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cloud_scanner.contracts.rule.Rule.process">
+<code class="descname">process</code><span class="sig-paren">(</span><em>resource: cloud_scanner.contracts.resource.Resource</em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#cloud_scanner.contracts.rule.Rule.process" title="Permalink to this definition">¶</a></dt>
+<dd><p>Processes the resource with the rule.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>resource</strong> – The resource to be processed with the rule.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Boolean if the rule had any effect.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-cloud_scanner.contracts.rule_factory">
+<span id="cloud-scanner-contracts-rule-factory-module"></span><h2>cloud_scanner.contracts.rule_factory module<a class="headerlink" href="#module-cloud_scanner.contracts.rule_factory" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="cloud_scanner.contracts.rule_factory.RuleFactory">
+<em class="property">class </em><code class="descclassname">cloud_scanner.contracts.rule_factory.</code><code class="descname">RuleFactory</code><a class="headerlink" href="#cloud_scanner.contracts.rule_factory.RuleFactory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Rule factory responsible for maintaining a list of rule
+definitions and returning instances of all registered rules.</p>
+<dl class="docutils">
+<dt>Attributes:</dt>
+<dd>_rules_factories: A list of lambda/functions that will instantiate
+an instance of each unique rule.</dd>
+</dl>
+<dl class="classmethod">
+<dt id="cloud_scanner.contracts.rule_factory.RuleFactory.get_rules">
+<em class="property">classmethod </em><code class="descname">get_rules</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; list<a class="headerlink" href="#cloud_scanner.contracts.rule_factory.RuleFactory.get_rules" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an instantiated list of each rule that has been registered.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">list[Rule] a list of instantiated rules.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="cloud_scanner.contracts.rule_factory.RuleFactory.register_rule">
+<em class="property">classmethod </em><code class="descname">register_rule</code><span class="sig-paren">(</span><em>rule_func</em><span class="sig-paren">)</span><a class="headerlink" href="#cloud_scanner.contracts.rule_factory.RuleFactory.register_rule" title="Permalink to this definition">¶</a></dt>
+<dd><p>Utility function used by the register_rule decorator to register a
+lambda/function to instantiate a rule.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="cloud_scanner.contracts.rule_factory.register_rule">
+<code class="descclassname">cloud_scanner.contracts.rule_factory.</code><code class="descname">register_rule</code><span class="sig-paren">(</span><em>factory_func=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cloud_scanner.contracts.rule_factory.register_rule" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decorator for registering a rule with the rule factory.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>factory_func</strong> – Optional lambda/function that will
+create and return an instance of the rule. Required if
+the rule has an __init__ function that takes any parameter
+other than self.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-cloud_scanner.contracts.storage_container">
+<span id="cloud-scanner-contracts-storage-container-module"></span><h2>cloud_scanner.contracts.storage_container module<a class="headerlink" href="#module-cloud_scanner.contracts.storage_container" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="cloud_scanner.contracts.storage_container.StorageContainer">
+<em class="property">class </em><code class="descclassname">cloud_scanner.contracts.storage_container.</code><code class="descname">StorageContainer</code><a class="headerlink" href="#cloud_scanner.contracts.storage_container.StorageContainer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">abc.ABC</span></code></p>
+<p>Base class for storage container.</p>
+<dl class="method">
+<dt id="cloud_scanner.contracts.storage_container.StorageContainer.get_blob_to_text">
+<code class="descname">get_blob_to_text</code><span class="sig-paren">(</span><em>file</em><span class="sig-paren">)</span><a class="headerlink" href="#cloud_scanner.contracts.storage_container.StorageContainer.get_blob_to_text" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get text content from file in storage container Not implemented in
+this class.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cloud_scanner.contracts.storage_container.StorageContainer.list_blobs">
+<code class="descname">list_blobs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cloud_scanner.contracts.storage_container.StorageContainer.list_blobs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get list of files in storage container Not implemented in this
+class.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cloud_scanner.contracts.storage_container.StorageContainer.upload_text">
+<code class="descname">upload_text</code><span class="sig-paren">(</span><em>filename</em>, <em>text</em><span class="sig-paren">)</span><a class="headerlink" href="#cloud_scanner.contracts.storage_container.StorageContainer.upload_text" title="Permalink to this definition">¶</a></dt>
+<dd><p>Upload text to file in storage container Not implemented in this
+class.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-cloud_scanner.contracts.storage_container_factory">
+<span id="cloud-scanner-contracts-storage-container-factory-module"></span><h2>cloud_scanner.contracts.storage_container_factory module<a class="headerlink" href="#module-cloud_scanner.contracts.storage_container_factory" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="cloud_scanner.contracts.storage_container_factory.StorageContainerFactory">
+<em class="property">class </em><code class="descclassname">cloud_scanner.contracts.storage_container_factory.</code><code class="descname">StorageContainerFactory</code><a class="headerlink" href="#cloud_scanner.contracts.storage_container_factory.StorageContainerFactory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Instantiate storage container services.</p>
+<dl class="classmethod">
+<dt id="cloud_scanner.contracts.storage_container_factory.StorageContainerFactory.create">
+<em class="property">classmethod </em><code class="descname">create</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; cloud_scanner.contracts.storage_container.StorageContainer<a class="headerlink" href="#cloud_scanner.contracts.storage_container_factory.StorageContainerFactory.create" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create storage container service.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Storage container service object</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="cloud_scanner.contracts.storage_container_factory.StorageContainerFactory.register_factory">
+<em class="property">classmethod </em><code class="descname">register_factory</code><span class="sig-paren">(</span><em>service_type: str</em>, <em>factory_func</em><span class="sig-paren">)</span><a class="headerlink" href="#cloud_scanner.contracts.storage_container_factory.StorageContainerFactory.register_factory" title="Permalink to this definition">¶</a></dt>
+<dd><p>Register factory.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>service_type</strong> – type of service of factory</li>
+<li><strong>factory_func</strong> – Function to intantiate service</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="cloud_scanner.contracts.storage_container_factory.register_storage_container">
+<code class="descclassname">cloud_scanner.contracts.storage_container_factory.</code><code class="descname">register_storage_container</code><span class="sig-paren">(</span><em>service_name</em>, <em>service_factory</em><span class="sig-paren">)</span><a class="headerlink" href="#cloud_scanner.contracts.storage_container_factory.register_storage_container" title="Permalink to this definition">¶</a></dt>
+<dd><p>Register storage container service.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>service_name</strong> – Name of service</li>
+<li><strong>service_factory</strong> – Function to instantiate service</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-cloud_scanner.contracts.table_storage">
+<span id="cloud-scanner-contracts-table-storage-module"></span><h2>cloud_scanner.contracts.table_storage module<a class="headerlink" href="#module-cloud_scanner.contracts.table_storage" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="cloud_scanner.contracts.table_storage.TableStorage">
+<em class="property">class </em><code class="descclassname">cloud_scanner.contracts.table_storage.</code><code class="descname">TableStorage</code><a class="headerlink" href="#cloud_scanner.contracts.table_storage.TableStorage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">abc.ABC</span></code></p>
+<p>Base class for Table Storage.</p>
+<dl class="method">
+<dt id="cloud_scanner.contracts.table_storage.TableStorage.delete">
+<code class="descname">delete</code><span class="sig-paren">(</span><em>partition_key</em>, <em>row_key</em><span class="sig-paren">)</span><a class="headerlink" href="#cloud_scanner.contracts.table_storage.TableStorage.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete specific entry in Table Storage Not implemented in this
+class.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cloud_scanner.contracts.table_storage.TableStorage.query">
+<code class="descname">query</code><span class="sig-paren">(</span><em>partition_key</em>, <em>row_key</em><span class="sig-paren">)</span><a class="headerlink" href="#cloud_scanner.contracts.table_storage.TableStorage.query" title="Permalink to this definition">¶</a></dt>
+<dd><p>Query Table Storage for specific entry Not implemented in this
+class.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cloud_scanner.contracts.table_storage.TableStorage.query_list">
+<code class="descname">query_list</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; list<a class="headerlink" href="#cloud_scanner.contracts.table_storage.TableStorage.query_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get list of all entries in table storage Not implemented in this
+class.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cloud_scanner.contracts.table_storage.TableStorage.write">
+<code class="descname">write</code><span class="sig-paren">(</span><em>entry</em><span class="sig-paren">)</span><a class="headerlink" href="#cloud_scanner.contracts.table_storage.TableStorage.write" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write entry to Table Storage Not implemented in this class.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="cloud_scanner.contracts.table_storage.TableStorage.write_entries">
+<code class="descname">write_entries</code><span class="sig-paren">(</span><em>entries</em><span class="sig-paren">)</span><a class="headerlink" href="#cloud_scanner.contracts.table_storage.TableStorage.write_entries" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write collection of entries to Table Storage Not implemented in this
+class.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-cloud_scanner.contracts.tag_update_rule">
+<span id="cloud-scanner-contracts-tag-update-rule-module"></span><h2>cloud_scanner.contracts.tag_update_rule module<a class="headerlink" href="#module-cloud_scanner.contracts.tag_update_rule" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="cloud_scanner.contracts.tag_update_rule.TagUpdateRule">
+<em class="property">class </em><code class="descclassname">cloud_scanner.contracts.tag_update_rule.</code><code class="descname">TagUpdateRule</code><span class="sig-paren">(</span><em>queue: cloud_scanner.contracts.queue.Queue</em><span class="sig-paren">)</span><a class="headerlink" href="#cloud_scanner.contracts.tag_update_rule.TagUpdateRule" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#cloud_scanner.contracts.rule.Rule" title="cloud_scanner.contracts.rule.Rule"><code class="xref py py-class docutils literal notranslate"><span class="pre">cloud_scanner.contracts.rule.Rule</span></code></a></p>
+<p>Utility base class for a rule that will update the tags on a given
+resource. Any tag update will be pushed onto a queue with a message
+containing the resource and a dictionary of tags to append.</p>
+<dl class="docutils">
+<dt>Attributes:</dt>
+<dd>_queue: An instance of the queue to push the tag update message to.</dd>
+</dl>
+<dl class="method">
+<dt id="cloud_scanner.contracts.tag_update_rule.TagUpdateRule.get_tags">
+<code class="descname">get_tags</code><span class="sig-paren">(</span><em>resource: cloud_scanner.contracts.resource.Resource</em><span class="sig-paren">)</span> &#x2192; dict<a class="headerlink" href="#cloud_scanner.contracts.tag_update_rule.TagUpdateRule.get_tags" title="Permalink to this definition">¶</a></dt>
+<dd><p>The dictionary of tags to update the resource with.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>resource</strong> – The resource to update tags on.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">dict of tags as key value pairs.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="cloud_scanner.contracts.tag_update_rule.TagUpdateRule.process">
+<code class="descname">process</code><span class="sig-paren">(</span><em>resource: cloud_scanner.contracts.resource.Resource</em><span class="sig-paren">)</span><a class="headerlink" href="#cloud_scanner.contracts.tag_update_rule.TagUpdateRule.process" title="Permalink to this definition">¶</a></dt>
+<dd><p>Processes the resource with the rule. The resource will first be
+checked to see the rule should be run using ‘check_condition’.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>resource</strong> – The resource to be processed with the rule.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Boolean if the rule was run.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-cloud_scanner.contracts">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-cloud_scanner.contracts" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">Cloud Scanner</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">API Reference</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">cloud_scanner</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="cloud_scanner.html">cloud_scanner package</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="modules.html">cloud_scanner</a><ul>
+  <li><a href="cloud_scanner.html">cloud_scanner package</a><ul>
+      <li>Previous: <a href="cloud_scanner.config.html" title="previous chapter">cloud_scanner.config package</a></li>
+      <li>Next: <a href="cloud_scanner.helpers.html" title="next chapter">cloud_scanner.helpers package</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Microsoft.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/generated/cloud_scanner.contracts.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

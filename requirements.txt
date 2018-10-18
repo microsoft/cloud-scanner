@@ -1,5 +1,0 @@
-python-dotenv
-pytest
-pytest-cov
-click
-Sphinx
