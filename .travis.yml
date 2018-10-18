@@ -18,5 +18,5 @@ jobs:
       script: pytest
     - stage: deploy
       name: "Sphinx Documentation"
-      script: sh build.sh
+      script: sh deploy.sh
 
