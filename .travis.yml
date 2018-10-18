@@ -19,8 +19,10 @@ jobs:
   include:
     - stage: test
       name: "Unit Tests"
-      script: pytest
+      script: 
+        - pytest
     - stage: deploy
+      skip_cleanup: true
       name: "Sphinx Documentation"
       script: sh deploy.sh
       name: "PyPi Packages"
@@ -31,7 +33,3 @@ jobs:
       password:
         secure: "LIzXU4HxzlL/TUcFCsOKkiatgc+Dr8s03xBRhGS4D53S153oS4cEzcMEvlbpKnblM+gmRJvJ+AzQrOPs/8pIRNTLWrGkD2dJKHohCJ6mhFUuwLATF1IcjseUxWeXX5KR5Qbad/f/PuA+3RaoQzSxJ77uTjxKj3hyqDQeQl6BdpaEJG8TaK3P5h9eIHXrC7ghVBSN4/DOBOpjggr1bsTG/UXlv6KLvPFVHn1DUffm1B5Hl4cDos8dV/jqdtIBGfJmoSzNP6DvjvpSl2rDeG/LZ+RLs5Wzwf4m++4Y1VuI5bAlPFg8egMLD0HYQaLrhkAKsZI3qUZvniQcadnU0EcgXE3uKSW0eG8IG0hMiTlFENL/BeSkaXHT1nh7EBxoOLWn2Vf5RqQfU7ohzxQzEkFL8UhIU6aA9boCoFFm4/uk//VuFbMQCd+Z9canU1bDw4V02NHVZdwTbIMtGy/zQLTJHyeAHeiw1ujl3+eleLG1wl2A+Il27AJEzi5qxZnC5XUqq3r5DPOtDoazcub4vd0AmEo4VjUoliNhbk76EC024k2dkDEUktMjd/p2WLVU4y61GwGmMiI6x9RpRNnhHOhWmtylObUUhMN4ANbDUkHJmiT/b0I2Y+P6GBusCpHGyneBmI9gpXF8Xb0Am5DlhTh+qlrhAfbaRJ+ueUvzm3itLYw="
       server: https://test.pypi.org/legacy/
-      on:
-        tags: true
-
-
