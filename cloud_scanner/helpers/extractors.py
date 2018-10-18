@@ -6,10 +6,9 @@ class ResourceExtractors:
     """Utility class for extracting components from an Azure Resource id.
 
     Attributes:
-        provider_extractor: Regex for extracting the resource provider.
-        type_extractor: Regex for extracting types from a resource provider.
-        rg_sub_extractor: Regex for extracting the resource group
-            and subscription id.
+    provider_extractor: Regex for extracting the resource provider.
+    type_extractor: Regex for extracting types from a resource provider.
+    rg_sub_extractor: Regex for extracting the resource group and subscription id.
     """
 
     provider_extractor = re.compile(
