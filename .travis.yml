@@ -1,36 +1,27 @@
 language: python
 python:
-  - "3.6"
-
+- '3.6'
 install:
-  - pip install -r requirements.txt
-
-script: 
-  - pytest
-
-before_deploy: 
-  # Generate sphinx output
-  - make sphinx
-
-  # Generate pypi package
-  - pip install --upgrade setuptools wheel
-  - python setup.py sdist bdist_wheel
-
+- pip install -r requirements.txt
+script:
+- pytest
+before_deploy:
+- make sphinx
+- pip install --upgrade setuptools wheel
+- python setup.py sdist bdist_wheel
 deploy:
   skip_cleanup: true
-
-  # Deploy Sphinx Docs
-  provider: pages
-  local-dir: docs/build/html
-  github-token: $GITHUB_TOKEN
-  keep-history: true
-  
-  # Deploy Pypi Package
   provider: pypi
-  user:
-    secure: "Yav7gi+Ilvu9Ji+j8PIAlBtTRP/wVgLrRWuFC0qy69eL1qMbjiL0DrILcJJl78fLaJyRepjoWFog2/GFQ1z5Tv5sqy2H9k7aZlLAWc/cQ5nsU78iGput5RD512C5ZnjrfDXPwELzosE9BtzRqP8SwvNtExUscirb8AyJPvpNu4O9F00L0anY9RUXOO+ZOGx5GiNDjtOyedxMp4Za+ek3uhEHmRSShe/7XAM3g7xXIlokeV6r2bwc8Ybfy6JdO0dS76NSGL3qNtSN5uROtmS8FoZ0H2sNGW4EDjoLxI2G08dFlMOMn3E3KGfQYodRrOlYID1wMgFpcyOFptkwVMM77BbEB3TXcFXTZIOJNftY78NRmXDrvBgDuiXHB0bWKLLuBHd+WwN3VBpCG6fQf5Mc8kWLQt0Jmvm8U0tfSV6opbGBy1x17zi1D9N4/9T2wETSZahrxTM7Y2zPc6Jvr1qXUwo6vF5Imvk4Wzi9/0ABe0cQ/NdVRvBvYrHXusTb2vzCePTmmXbGv4vnjORC9rJsRfo9e2K9EcHlazRk7eLwleWSRvvacTgIuUNjKlPcGdIWVv+fqhiVVuoGdHAkSzWJyDab1ej/sAlslYS/lx+5sGzomG0EBtces1+ou4JOP5iAhQ9haAZm2dPmopjp4c40liiRJG7YDN3CfTln540EVNw="
-  password:
-    secure: "LIzXU4HxzlL/TUcFCsOKkiatgc+Dr8s03xBRhGS4D53S153oS4cEzcMEvlbpKnblM+gmRJvJ+AzQrOPs/8pIRNTLWrGkD2dJKHohCJ6mhFUuwLATF1IcjseUxWeXX5KR5Qbad/f/PuA+3RaoQzSxJ77uTjxKj3hyqDQeQl6BdpaEJG8TaK3P5h9eIHXrC7ghVBSN4/DOBOpjggr1bsTG/UXlv6KLvPFVHn1DUffm1B5Hl4cDos8dV/jqdtIBGfJmoSzNP6DvjvpSl2rDeG/LZ+RLs5Wzwf4m++4Y1VuI5bAlPFg8egMLD0HYQaLrhkAKsZI3qUZvniQcadnU0EcgXE3uKSW0eG8IG0hMiTlFENL/BeSkaXHT1nh7EBxoOLWn2Vf5RqQfU7ohzxQzEkFL8UhIU6aA9boCoFFm4/uk//VuFbMQCd+Z9canU1bDw4V02NHVZdwTbIMtGy/zQLTJHyeAHeiw1ujl3+eleLG1wl2A+Il27AJEzi5qxZnC5XUqq3r5DPOtDoazcub4vd0AmEo4VjUoliNhbk76EC024k2dkDEUktMjd/p2WLVU4y61GwGmMiI6x9RpRNnhHOhWmtylObUUhMN4ANbDUkHJmiT/b0I2Y+P6GBusCpHGyneBmI9gpXF8Xb0Am5DlhTh+qlrhAfbaRJ+ueUvzm3itLYw="
+  local-dir: docs/build/html
+  github-token: $PAGES_TOKEN
+  keep-history: true
+  user: $PYPI_USERNAME
+  password: $PYPI_PASSWORD
   server: https://test.pypi.org/legacy/
   on:
     all_branches: true
+env:
+  global:
+  - secure: WJpNVYHMqnI9feOedo22wxYMFBQJNr0Ggv7XlKpjNWRXZfhiQ9gZzXYwHmkz4H6r1tJIQqzWoIetEj9kRA6nArO5hVR2EiVjSgZcJefzawLdRUXMLx4FnkHcbHeQhDDefgPqhoxlPe6jEAaM6ND0JBRZtk+GFag9r/j2WhzzBZ73fxyPGsrDNH/UF7fht6NOiPzbY2/irO8QzkMwAPwVvs6bDjsm2+VZ5diAxUMlVTammoUNqO3hYn+X4eXIo+KyTsGthCfezvo9vjtJ4ojHPiyMCuNlFTjlblPA07kg8aiaWOfzE7hUxTif/J/JsykPCzvASmvnWjK2xJlz483Is5rycqWjX1YUoPqQpmVhUm7swfrKPopOveYw6lKzhBE97RpwAiSQFAn1KjwsqGFoq5s54TEgYPxWiasm2V9sMLJjSKmgBZuUG+o2aq08aRRnRtXzYtlbcbumCNhqWsQQzq1ABmz2Lo1qGtdpkul+jULnjLLnUD1LLzVZQEAQ45EWPtmOFUJuqjmyWRbIY5dw1+WMA/XV7DwG2ugbhswMpJF7AMLpjia46zVCGMS1z4gb+cUsIZ7JSYPEHkqUHomCOxR6YF4O+yhWEzNyaa/s9yW1Iveu65kzM9KXpyvtwn+wRSFc46z4QY3pplhQ56AN8nsXnVLvWy9lM30j7NQEo1Y=
+  - secure: rX5/beI4nJkCWRtyuv4nknTOtVqqcmdTmZJlSfKIvGT4ExYRUM1QZL0CknnswW85anpPn6YyTSQJ3vBhuwG71vYILZBstnS2qxDlyWGdH+u/8mERdVjHaUGAnLYeKe5km8H84OXuwXi85DPr4lfab8KzPsCTxD3kaeaYKx4JY76CFwzxRtvB2KrWOgUX1lVfyVZIgBoWsXx9BxKL03F33NL+8PEaze1BmB9sfnN/AVQaERTGdtW7b/cVugc5UVpx5OeQbILT76JUMS4FA84gkJRCHiY3flKhlCn7x28/948Fx7CRgduyIcnXSOSKzYf4QRW3AgR1ldPg0um3kZItWft8PZguuBjavf5QRt7RyjNptyqLD9Hl0MMUvOdRY+ssDra5mlXWyVSejjUGnc2VRb3+59cqra9Jx16eHH4RHcpNlWtktC/D/H0DVuMt0b04TGz2D/Iwrbg186CsiTVUYEUHHQ4WGh2UfaF8w9L69ViFMwZcaQ6JVr/UKWsQk+F6i8dZ74JAmxEiq/2Y5i8xabF5G/oTGrHchGcdkpoUAsjVY8xkFL7DKB1lqg83tG+d9ylZpr0BCY8VkZlvHXDC9DEB38Sb45EiL+G/Rsk9QSLPLPFDHON4xZn/KQvsRPvkJ34usgCmARDKwrwnjqMkx7zIj226nVd+GlpTVfg7Mhk=
+  - secure: A7jX/XnnP8kO42gG+fGs5OBxa2EM3UiE4/gF6jDhwW9VekmrXtdhzb40XIhrTwY/uyRd5lzoqrxAgYjGgt3rK13AqOcZfj+5s2CfrVVSfukGCOdtAUknNKOs+Acs+MIVF8uyeKoPSCBw3vPyDC0rxgbCrs1oWlXs2QSGj4+925Ty4590tv4bok5gMgg+wXyRpBv7l+JFWb+j8JmefjGZwXolq5iE0s1x3Im3Gcv4BBSWSaxomOFpWvs2qiiTi4PgKLyaWvyvzofRL4FmSMfal3MlABmv5j5xqsxVPCBKBsfPKFM+o9rD4wJ4JiGBb0fFMN2Z55upsU7Uhqd1rwWsgveKL8e/IZonU+DTucAnVmTZOUX1oJj7hUQzP4HDcagCKrp0cQsd8Rf79GSGdnjF0MkST0KzTyRXo5z/ysjwUF2EQTbRhGK1Gev6rKYpMexLt+nt/YoEU4RTuk0ZxEr95w1K+RR41mYkGz6LfsNTPuRrlAB1+JJKSp5+VTPZ7F0By4zP87J40QUs3dgYxErfzWMciOyQL26ZMN8r+X+wglThdHa9LP1J2A0/XIz+dQV4YynOk/TzN6I7KLHR0zQzCEMR/ysl1Wv7C20yzH7RynIS42ijQfQmXuRlTgDs/auni+mjk4eJYRKgHo/Vp+3GJdxhiWKin2Bw9u7I+qnOKUY=
