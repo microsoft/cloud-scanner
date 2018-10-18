@@ -25,7 +25,6 @@ upload_files() {
   git push origin-pages gh-pages --force
 }
 
-pytest
 make sphinx
 setup_git
 commit_website_files

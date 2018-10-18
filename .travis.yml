@@ -1,6 +1,22 @@
 language: python
 python:
   - "3.6"
+
+stages:
+  - compile
+  - test
+  - name: deploy
+    if: branch = master
+
 install:
-  - pip install -r requirements.txt
-script: sh build.sh
+- pip install -r requirements.txt
+
+jobs:
+  include:
+    - stage: test
+      name: "Unit Tests"
+      script: pytest
+    - stage: deploy
+      name: "Sphinx Documentation"
+      script: sh build.sh
+
