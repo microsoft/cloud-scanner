@@ -1,4 +1,11 @@
-# cloud-scanner
+# Cloud Scanner
+
+[![Build Status](https://travis-ci.com/Microsoft/cloud-scanner.svg?token=nXyWFYxRu6tVxUMJAuJr&branch=master)](https://travis-ci.com/Microsoft/cloud-scanner)
+
+## Developer Documentation
+[Read the API docs](https://microsoft.github.io/cloud-scanner/)
+
+## Introduction
 
 Core library for Cloud Scanner project, which is a workflow for discovering and documenting cloud resources across multiple accounts or subscriptions with the intent to store, update tags, and/or perform other generic resource related operations. 
 
