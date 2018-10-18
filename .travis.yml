@@ -5,13 +5,17 @@ python:
 stages:
   - compile
   - test
-  - sphinx
-  - pypi
+  - deploy
 
 install:
   - pip install -r requirements.txt
 
-script: pytest
+before_deploy: 
+  # Generate sphinx output
+  - make sphinx
+  # Generate pypi package
+  - pip install --user --upgrade setuptools wheel
+  - python setup.py sdist bdist_wheel
 
 jobs:
   include:
@@ -19,16 +23,17 @@ jobs:
       name: "Unit Tests"
       script: 
         - pytest
-    - stage: sphinx
-      skip_cleanup: true
+    - stage: deploy
+      # Deploy Sphinx Docs
       name: "Sphinx Documentation"
-      script: sh deploy.sh
-    - stage: pypi
-      skip_cleanup: true
+      script: skip
+      provider: pages
+      skip-cleanup: true
+      github-token: $GITHUB_TOKEN
+      keep-history: true
+      # Deploy Pypi Package
       name: "PyPi Packages"
-      before_deploy:
-        - pip install --user --upgrade setuptools wheel
-        - python setup.py sdist bdist_wheel
+      skip_cleanup: true
       script: skip
       provider: pypi
       user:
