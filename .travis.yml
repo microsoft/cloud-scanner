@@ -13,10 +13,10 @@ deploy:
   skip_cleanup: true
   provider: pypi
   local-dir: docs/build/html
-  github-token: $PAGES_TOKEN
+  github-token: PAGES_TOKEN
   keep-history: true
-  user: $PYPI_USERNAME
-  password: $PYPI_PASSWORD
+  user: PYPI_USERNAME
+  password: PYPI_PASSWORD
   server: https://test.pypi.org/legacy/
   on:
     all_branches: true
