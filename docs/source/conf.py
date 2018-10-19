@@ -29,8 +29,6 @@ version = '__version__'
 # The full version, including alpha/beta/rc tags
 release = __version__
 
-print('foobar', release)
-
 # -- General configuration ---------------------------------------------------
 
 # If your documentation needs a minimal Sphinx version, state it here.
