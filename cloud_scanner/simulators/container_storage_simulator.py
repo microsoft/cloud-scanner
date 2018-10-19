@@ -1,13 +1,12 @@
 import logging
 
-from cloud_scanner.contracts.storage_container import StorageContainer
-from cloud_scanner.contracts.storage_container_factory import register_storage_container
+from cloud_scanner.contracts import (
+    StorageContainer, register_storage_container)
 
 
 class MockBlobStorageOutput:
-    """
-    Simulator of blob storage output
-    """
+    """Simulator of blob storage output."""
+
     def __init__(self, name, content):
         self._name = name
         self._content = str(content)
@@ -27,25 +26,28 @@ class MockBlobStorageOutput:
         return self._content
 
 
-@register_storage_container("simulator", lambda: MockBlobStorageSimulator())
+@register_storage_container("simulator",
+                            lambda: MockBlobStorageSimulator())
 class MockBlobStorageSimulator(StorageContainer):
-    """
-    Simulator of BlobStorage
-    """
+    """Simulator of BlobStorage."""
+
     def __init__(self):
 
         config_content = '''{
             "providers":[
                 {
                     "type":"simulator",
-                    "resourceTypes": [{"typeName": "Microsoft.Compute/virtualMachines"}],
+                    "resourceTypes": [{"typeName":
+                        "Microsoft.Compute/virtualMachines"}],
                     "subscriptions": [
                         {
-                            "subscriptionId": "00000000-0000-0000-0000-000000000001", 
+                            "subscriptionId":
+                                "00000000-0000-0000-0000-000000000001",
                             "displayName": "Simulator Sub 1"
                         },
                         {
-                            "subscriptionId": "00000000-0000-0000-0000-000000000002", 
+                            "subscriptionId":
+                                "00000000-0000-0000-0000-000000000002",
                             "displayName": "Simulator Sub 2"
                         }
                     ]
@@ -53,12 +55,18 @@ class MockBlobStorageSimulator(StorageContainer):
         }'''
 
         list_of_entries = []
-        latest = MockBlobStorageOutput('config-2018-08-29-10-20-49.json ', config_content)
-        entry1 = MockBlobStorageOutput('config-2018-08-20-12-33-48.json ', '{}')
-        entry2 = MockBlobStorageOutput('config-2018-08-21-09-41-05.json ', '{}')
-        entry3 = MockBlobStorageOutput('config-2018-08-21-09-42-12.json ', '{}')
-        entry4 = MockBlobStorageOutput('config-2018-08-22-11-41-49.json ', '{}')
-        entry5 = MockBlobStorageOutput('config-2018-08-22-11-50-38.json ', '{}')
+        latest = MockBlobStorageOutput(
+            'config-2018-08-29-10-20-49.json ', config_content)
+        entry1 = MockBlobStorageOutput(
+            'config-2018-08-20-12-33-48.json ', '{}')
+        entry2 = MockBlobStorageOutput(
+            'config-2018-08-21-09-41-05.json ', '{}')
+        entry3 = MockBlobStorageOutput(
+            'config-2018-08-21-09-42-12.json ', '{}')
+        entry4 = MockBlobStorageOutput(
+            'config-2018-08-22-11-41-49.json ', '{}')
+        entry5 = MockBlobStorageOutput(
+            'config-2018-08-22-11-50-38.json ', '{}')
 
         list_of_entries.append(latest)
         list_of_entries.append(entry1)
@@ -77,7 +85,8 @@ class MockBlobStorageSimulator(StorageContainer):
         """
         # ensure the latest config was picked
         if config is not self._latest_entry.name:
-            logging.error("The picked config is not the latest. Returned: %s, latest: %s",
+            logging.error("The picked config is not the latest. "
+                          "Returned: %s, latest: %s",
                           config, self._latest_entry.name)
             return None
         return self._latest_entry
@@ -95,8 +104,8 @@ class MockBlobStorageSimulator(StorageContainer):
         return self._latest_entry
 
     def upload_text(self, filename, text):
-        """
-        Fake call to upload text
+        """Fake call to upload text.
+
         :param filename: name of new config file
         :param text: text to put in config file
         :return: None
