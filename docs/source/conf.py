@@ -24,10 +24,12 @@ copyright = '2018, Microsoft'
 author = 'Microsoft'
 
 # The short X.Y version
-version = ''
+exec(open('../../cloud_scanner/version.py').read())
+version = '__version__'
 # The full version, including alpha/beta/rc tags
-release = '0.1'
+release = __version__
 
+print('foobar', release)
 
 # -- General configuration ---------------------------------------------------
 
