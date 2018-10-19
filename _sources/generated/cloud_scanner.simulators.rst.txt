@@ -1,0 +1,54 @@
+cloud\_scanner.simulators package
+=================================
+
+Submodules
+----------
+
+cloud\_scanner.simulators.account\_service\_simulator module
+------------------------------------------------------------
+
+.. automodule:: cloud_scanner.simulators.account_service_simulator
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+cloud\_scanner.simulators.container\_storage\_simulator module
+--------------------------------------------------------------
+
+.. automodule:: cloud_scanner.simulators.container_storage_simulator
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+cloud\_scanner.simulators.queue\_simulator module
+-------------------------------------------------
+
+.. automodule:: cloud_scanner.simulators.queue_simulator
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+cloud\_scanner.simulators.resource\_service\_simulator module
+-------------------------------------------------------------
+
+.. automodule:: cloud_scanner.simulators.resource_service_simulator
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+cloud\_scanner.simulators.table\_storage\_simulator module
+----------------------------------------------------------
+
+.. automodule:: cloud_scanner.simulators.table_storage_simulator
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+
+Module contents
+---------------
+
+.. automodule:: cloud_scanner.simulators
+    :members:
+    :undoc-members:
+    :show-inheritance:
