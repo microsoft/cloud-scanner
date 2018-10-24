@@ -33,7 +33,7 @@ class ResourceServiceFactory:
             return cls._factories[service_type](subscription_id)
         except KeyError:
             raise KeyError(
-                f"Service type {service_type} is not " +
+                f"Service type {service_type} is not "
                 "registered for Resource Service")
 
     @classmethod
