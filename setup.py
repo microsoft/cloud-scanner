@@ -4,7 +4,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 exec(open('cloud_scanner/version.py').read())
-setup(name='cloud_scanner',
+setup(name='cloud_scanner_core',
       version=__version__,
       description='Core package for scanning cloud resources across providers',
       url='https://microsoft.github.io/cloud-scanner',
