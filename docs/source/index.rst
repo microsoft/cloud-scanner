@@ -20,7 +20,7 @@ Related Projects
 * `cloud-scanner-functions-example <https://github.com/Microsoft/cloud-scanner-azure-functions-sample>`_
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: API Reference
 
    generated/modules
