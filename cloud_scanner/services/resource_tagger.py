@@ -86,8 +86,8 @@ class ResourceTagProcessor:
         for tag_key, tag_value in tags.items():
             if not overwrite and tag_key in resource.tags:
                 logging.info(
-                    f"Skipped tagging {resource.id} with tag {tag_key}" +
-                    "since it already exists.")
+                    f"Skipped tagging {resource.id} with tag {tag_key}"
+                    " since it already exists.")
                 self._tags_skipped += 1
                 continue
 

@@ -57,13 +57,13 @@ class ResourceTaskProcessor:
         subscription_id = task["subscriptionId"]
         if subscription_id is None:
             raise Exception(
-                "Couldn't find a subscriptionId for the task: " +
-                json.dumps(task))
+                "Couldn't find a subscriptionId for the "
+                "task: " + json.dumps(task))
 
         resource_type = task.get("typeName", None)
         logging.info(
-            f"Received task for subscription {subscription_id} " +
-            f"and resource type {resource_type}")
+            f"Received task for subscription {subscription_id}"
+            f" and resource type {resource_type}")
 
         resource_filter = self._resource_service.get_filter(resource_type)
         resources = self._resource_service.get_resources(resource_filter)
