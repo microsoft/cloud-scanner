@@ -1,8 +1,8 @@
 import json
 
-from .rule import Rule
-from .queue import Queue
-from .resource import Resource
+from cloud_scanner.contracts.rule import Rule
+from cloud_scanner.contracts.queue import Queue
+from cloud_scanner.contracts.resource import Resource
 
 
 class TagUpdateRule(Rule):

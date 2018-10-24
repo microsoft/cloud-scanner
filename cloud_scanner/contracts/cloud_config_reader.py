@@ -1,7 +1,7 @@
 import json
 import logging
 
-from .storage_container import StorageContainer
+from cloud_scanner.contracts.storage_container import StorageContainer
 
 
 class CloudConfigReader:

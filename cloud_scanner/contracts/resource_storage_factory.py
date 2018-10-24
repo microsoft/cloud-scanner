@@ -1,5 +1,5 @@
 from cloud_scanner.config.process_config import ProcessConfig
-from .table_storage import TableStorage
+from cloud_scanner.contracts.table_storage import TableStorage
 
 
 def register_resource_storage(service_name, service_factory):

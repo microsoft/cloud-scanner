@@ -1,4 +1,4 @@
-from .resource_service import ResourceService
+from cloud_scanner.contracts.resource_service import ResourceService
 
 
 def register_resource_service(service_name, service_factory):

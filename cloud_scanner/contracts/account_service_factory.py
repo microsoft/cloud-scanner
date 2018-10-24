@@ -1,4 +1,4 @@
-from .account_service import AccountService
+from cloud_scanner.contracts.account_service import AccountService
 
 
 def register_account_service(service_name, service_factory):

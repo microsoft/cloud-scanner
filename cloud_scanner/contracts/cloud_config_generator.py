@@ -1,8 +1,11 @@
 import json
 from datetime import datetime
 
-from .account_service_factory import AccountServiceFactory
-from .storage_container import StorageContainer
+from cloud_scanner.contracts.account_service_factory import (
+    AccountServiceFactory,
+)
+
+from cloud_scanner.contracts.storage_container import StorageContainer
 
 
 class CloudConfigGenerator:
@@ -25,26 +28,26 @@ class CloudConfigGenerator:
             account_service = AccountServiceFactory.create(provider_type)
             accounts = []
             for account in account_service.get_accounts():
-                accounts.append({
-                    "subscriptionId": account["subscriptionId"],
-                    "displayName": account["displayName"]
-                })
+                accounts.append(
+                    {
+                        "subscriptionId": account["subscriptionId"],
+                        "displayName": account["displayName"],
+                    }
+                )
 
             types = []
             for resource_type in resource_types:
-                types.append({
-                    "typeName": resource_type
-                })
+                types.append({"typeName": resource_type})
 
-            providers.append({
-                "type": provider_type,
-                "subscriptions": accounts,
-                "resourceTypes": types
-            })
+            providers.append(
+                {
+                    "type": provider_type,
+                    "subscriptions": accounts,
+                    "resourceTypes": types,
+                }
+            )
 
-        return json.dumps({
-            "providers": providers
-        })
+        return json.dumps({"providers": providers})
 
     def output_config(self, config):
         """Upload config payload to Storage container.
@@ -52,6 +55,7 @@ class CloudConfigGenerator:
         :param config: json payload of config
         :return: None
         """
-        blob_name = 'config-{date:%Y-%m-%d-%H-%M-%S}.json'.format(
-            date=datetime.now())
+        blob_name = "config-{date:%Y-%m-%d-%H-%M-%S}.json".format(
+            date=datetime.now()
+        )
         self._container.upload_text(blob_name, config)

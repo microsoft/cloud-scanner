@@ -1,2 +1,2 @@
-from .entry_storage import EntryOperations
-from .functions import batch_list
+from cloud_scanner.helpers.entry_storage import EntryOperations
+from cloud_scanner.helpers.functions import batch_list

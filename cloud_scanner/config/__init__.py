@@ -1,2 +1,2 @@
-from .configuration import Config
-from .process_config import ProcessConfig
+from cloud_scanner.config.configuration import Config
+from cloud_scanner.config.process_config import ProcessConfig

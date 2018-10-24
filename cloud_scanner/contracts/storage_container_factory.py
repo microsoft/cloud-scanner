@@ -1,5 +1,5 @@
 from cloud_scanner.config.process_config import ProcessConfig
-from .storage_container import StorageContainer
+from cloud_scanner.contracts.storage_container import StorageContainer
 
 
 def register_storage_container(service_name, service_factory):
