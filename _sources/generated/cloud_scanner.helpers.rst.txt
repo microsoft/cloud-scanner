@@ -12,14 +12,6 @@ cloud\_scanner.helpers.entry\_storage module
     :undoc-members:
     :show-inheritance:
 
-cloud\_scanner.helpers.extractors module
-----------------------------------------
-
-.. automodule:: cloud_scanner.helpers.extractors
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
 cloud\_scanner.helpers.functions module
 ---------------------------------------
 

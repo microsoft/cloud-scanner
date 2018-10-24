@@ -6,31 +6,41 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>cloud_scanner.simulators package &#8212; Cloud Scanner 0.1.2 documentation</title>
-    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <title>cloud_scanner.simulators package &#8212; Cloud Scanner 0.1.0 documentation</title>
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
     <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="cloud_scanner.services package" href="cloud_scanner.services.html" />
-   
-  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
-  
-  
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
-
+    <link rel="prev" title="cloud_scanner.services package" href="cloud_scanner.services.html" /> 
   </head><body>
-  
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="cloud_scanner.services.html" title="cloud_scanner.services package"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Cloud Scanner 0.1.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="modules.html" >cloud_scanner</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="cloud_scanner.html" accesskey="U">cloud_scanner package</a> &#187;</li> 
+      </ul>
+    </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          
-
           <div class="body" role="main">
             
   <div class="section" id="cloud-scanner-simulators-package">
@@ -44,11 +54,11 @@
 <dt id="cloud_scanner.simulators.account_service_simulator.AccountServiceSimulator">
 <em class="property">class </em><code class="descclassname">cloud_scanner.simulators.account_service_simulator.</code><code class="descname">AccountServiceSimulator</code><a class="headerlink" href="#cloud_scanner.simulators.account_service_simulator.AccountServiceSimulator" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="cloud_scanner.contracts.html#cloud_scanner.contracts.account_service.AccountService" title="cloud_scanner.contracts.account_service.AccountService"><code class="xref py py-class docutils literal notranslate"><span class="pre">cloud_scanner.contracts.account_service.AccountService</span></code></a></p>
-<p>Simulator of AccoutService</p>
+<p>Simulator of AccoutService.</p>
 <dl class="method">
 <dt id="cloud_scanner.simulators.account_service_simulator.AccountServiceSimulator.get_accounts">
 <code class="descname">get_accounts</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cloud_scanner.simulators.account_service_simulator.AccountServiceSimulator.get_accounts" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get fake accounts</p>
+<dd><p>Get fake accounts.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -57,6 +67,16 @@
 </tr>
 </tbody>
 </table>
+<dl class="docutils">
+<dt>[</dt>
+<dd><dl class="first last docutils">
+<dt>{</dt>
+<dd>‘subscriptionId’: ‘…’,
+‘displayName’: ‘…’</dd>
+</dl>
+</dd>
+</dl>
+<p>]</p>
 </dd></dl>
 
 </dd></dl>
@@ -68,7 +88,7 @@
 <dt id="cloud_scanner.simulators.container_storage_simulator.MockBlobStorageOutput">
 <em class="property">class </em><code class="descclassname">cloud_scanner.simulators.container_storage_simulator.</code><code class="descname">MockBlobStorageOutput</code><span class="sig-paren">(</span><em>name</em>, <em>content</em><span class="sig-paren">)</span><a class="headerlink" href="#cloud_scanner.simulators.container_storage_simulator.MockBlobStorageOutput" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>Simulator of blob storage output</p>
+<p>Simulator of blob storage output.</p>
 <dl class="attribute">
 <dt id="cloud_scanner.simulators.container_storage_simulator.MockBlobStorageOutput.content">
 <code class="descname">content</code><a class="headerlink" href="#cloud_scanner.simulators.container_storage_simulator.MockBlobStorageOutput.content" title="Permalink to this definition">¶</a></dt>
@@ -101,7 +121,7 @@
 <dt id="cloud_scanner.simulators.container_storage_simulator.MockBlobStorageSimulator">
 <em class="property">class </em><code class="descclassname">cloud_scanner.simulators.container_storage_simulator.</code><code class="descname">MockBlobStorageSimulator</code><a class="headerlink" href="#cloud_scanner.simulators.container_storage_simulator.MockBlobStorageSimulator" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="cloud_scanner.contracts.html#cloud_scanner.contracts.storage_container.StorageContainer" title="cloud_scanner.contracts.storage_container.StorageContainer"><code class="xref py py-class docutils literal notranslate"><span class="pre">cloud_scanner.contracts.storage_container.StorageContainer</span></code></a></p>
-<p>Simulator of BlobStorage</p>
+<p>Simulator of BlobStorage.</p>
 <dl class="method">
 <dt id="cloud_scanner.simulators.container_storage_simulator.MockBlobStorageSimulator.get_blob_to_text">
 <code class="descname">get_blob_to_text</code><span class="sig-paren">(</span><em>config</em><span class="sig-paren">)</span><a class="headerlink" href="#cloud_scanner.simulators.container_storage_simulator.MockBlobStorageSimulator.get_blob_to_text" title="Permalink to this definition">¶</a></dt>
@@ -146,10 +166,22 @@
 <dl class="method">
 <dt id="cloud_scanner.simulators.container_storage_simulator.MockBlobStorageSimulator.upload_text">
 <code class="descname">upload_text</code><span class="sig-paren">(</span><em>filename</em>, <em>text</em><span class="sig-paren">)</span><a class="headerlink" href="#cloud_scanner.simulators.container_storage_simulator.MockBlobStorageSimulator.upload_text" title="Permalink to this definition">¶</a></dt>
-<dd><p>Fake call to upload text
-:param filename: name of new config file
-:param text: text to put in config file
-:return: None</p>
+<dd><p>Fake call to upload text.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>filename</strong> – name of new config file</li>
+<li><strong>text</strong> – text to put in config file</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </dd></dl>
@@ -161,27 +193,49 @@
 <dt id="cloud_scanner.simulators.queue_simulator.QueueSimulator">
 <em class="property">class </em><code class="descclassname">cloud_scanner.simulators.queue_simulator.</code><code class="descname">QueueSimulator</code><span class="sig-paren">(</span><em>queue_name</em>, <em>config=None</em><span class="sig-paren">)</span><a class="headerlink" href="#cloud_scanner.simulators.queue_simulator.QueueSimulator" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="cloud_scanner.contracts.html#cloud_scanner.contracts.queue.Queue" title="cloud_scanner.contracts.queue.Queue"><code class="xref py py-class docutils literal notranslate"><span class="pre">cloud_scanner.contracts.queue.Queue</span></code></a></p>
-<p>Simulator of queue service</p>
+<p>Simulator of queue service.</p>
 <dl class="method">
 <dt id="cloud_scanner.simulators.queue_simulator.QueueSimulator.peek">
 <code class="descname">peek</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cloud_scanner.simulators.queue_simulator.QueueSimulator.peek" title="Permalink to this definition">¶</a></dt>
-<dd><p>Peek at message, but don’t pop
-:return: Message peeked</p>
+<dd><p>Peek at message, but don’t pop.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Message peeked</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="cloud_scanner.simulators.queue_simulator.QueueSimulator.pop">
 <code class="descname">pop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cloud_scanner.simulators.queue_simulator.QueueSimulator.pop" title="Permalink to this definition">¶</a></dt>
-<dd><p>Pop message off of queue
-:return: Message popped</p>
+<dd><p>Pop message off of queue.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Message popped</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="cloud_scanner.simulators.queue_simulator.QueueSimulator.push">
 <code class="descname">push</code><span class="sig-paren">(</span><em>message</em><span class="sig-paren">)</span><a class="headerlink" href="#cloud_scanner.simulators.queue_simulator.QueueSimulator.push" title="Permalink to this definition">¶</a></dt>
-<dd><p>Push new message to queue
-:param message: message to push
-:return: None</p>
+<dd><p>Push new message to queue.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>message</strong> – message to push</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </dd></dl>
@@ -193,7 +247,7 @@
 <dt id="cloud_scanner.simulators.resource_service_simulator.ResourceServiceSimulator">
 <em class="property">class </em><code class="descclassname">cloud_scanner.simulators.resource_service_simulator.</code><code class="descname">ResourceServiceSimulator</code><a class="headerlink" href="#cloud_scanner.simulators.resource_service_simulator.ResourceServiceSimulator" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="cloud_scanner.contracts.html#cloud_scanner.contracts.resource_service.ResourceService" title="cloud_scanner.contracts.resource_service.ResourceService"><code class="xref py py-class docutils literal notranslate"><span class="pre">cloud_scanner.contracts.resource_service.ResourceService</span></code></a></p>
-<p>Simulator of resource service</p>
+<p>Simulator of resource service.</p>
 <dl class="method">
 <dt id="cloud_scanner.simulators.resource_service_simulator.ResourceServiceSimulator.get_filter">
 <code class="descname">get_filter</code><span class="sig-paren">(</span><em>payload</em><span class="sig-paren">)</span> &#x2192; cloud_scanner.contracts.resource_service.ResourceFilter<a class="headerlink" href="#cloud_scanner.simulators.resource_service_simulator.ResourceServiceSimulator.get_filter" title="Permalink to this definition">¶</a></dt>
@@ -203,9 +257,17 @@
 <dl class="method">
 <dt id="cloud_scanner.simulators.resource_service_simulator.ResourceServiceSimulator.get_resources">
 <code class="descname">get_resources</code><span class="sig-paren">(</span><em>filter: cloud_scanner.contracts.resource_service.ResourceFilter = None</em><span class="sig-paren">)</span><a class="headerlink" href="#cloud_scanner.simulators.resource_service_simulator.ResourceServiceSimulator.get_resources" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get list of AzureResources from service
-:param filter: Filter object to filter resources
-:return: List of AzureResource objects</p>
+<dd><p>Get list of AzureResources from service.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>filter</strong> – Filter object to filter resources</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">List of AzureResource objects</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="attribute">
@@ -242,38 +304,77 @@ this class.</p>
 <dt id="cloud_scanner.simulators.table_storage_simulator.TableStorageSimulator">
 <em class="property">class </em><code class="descclassname">cloud_scanner.simulators.table_storage_simulator.</code><code class="descname">TableStorageSimulator</code><a class="headerlink" href="#cloud_scanner.simulators.table_storage_simulator.TableStorageSimulator" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="cloud_scanner.contracts.html#cloud_scanner.contracts.table_storage.TableStorage" title="cloud_scanner.contracts.table_storage.TableStorage"><code class="xref py py-class docutils literal notranslate"><span class="pre">cloud_scanner.contracts.table_storage.TableStorage</span></code></a></p>
-<p>Simulator of TableStorage service</p>
+<p>Simulator of TableStorage service.</p>
 <dl class="method">
 <dt id="cloud_scanner.simulators.table_storage_simulator.TableStorageSimulator.delete">
 <code class="descname">delete</code><span class="sig-paren">(</span><em>partition_key</em>, <em>row_key</em><span class="sig-paren">)</span><a class="headerlink" href="#cloud_scanner.simulators.table_storage_simulator.TableStorageSimulator.delete" title="Permalink to this definition">¶</a></dt>
-<dd><p>Delete resource from storage
-:param partition_key: Partition key of resource
-:param row_key: Row key of resource
-:return: None</p>
+<dd><p>Delete resource from storage.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>partition_key</strong> – Partition key of resource</li>
+<li><strong>row_key</strong> – Row key of resource</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="cloud_scanner.simulators.table_storage_simulator.TableStorageSimulator.query">
 <code class="descname">query</code><span class="sig-paren">(</span><em>partition_key</em>, <em>row_key</em><span class="sig-paren">)</span><a class="headerlink" href="#cloud_scanner.simulators.table_storage_simulator.TableStorageSimulator.query" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get element from table storage
-:param partition_key: Partition key of resource
-:param row_key: Row key of resource
-:return: Resource if found</p>
+<dd><p>Get element from table storage.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>partition_key</strong> – Partition key of resource</li>
+<li><strong>row_key</strong> – Row key of resource</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">Resource if found</p>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="cloud_scanner.simulators.table_storage_simulator.TableStorageSimulator.query_list">
 <code class="descname">query_list</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cloud_scanner.simulators.table_storage_simulator.TableStorageSimulator.query_list" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get all resources in storage
-:return: List of Resource objects</p>
+<dd><p>Get all resources in storage.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">List of Resource objects</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="cloud_scanner.simulators.table_storage_simulator.TableStorageSimulator.write">
 <code class="descname">write</code><span class="sig-paren">(</span><em>resource</em><span class="sig-paren">)</span><a class="headerlink" href="#cloud_scanner.simulators.table_storage_simulator.TableStorageSimulator.write" title="Permalink to this definition">¶</a></dt>
-<dd><p>Write resource to storage
-:param resource: Resource to write
-:return: None</p>
+<dd><p>Write resource to storage.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>resource</strong> – Resource to write</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">None</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </dd></dl>
@@ -286,41 +387,34 @@ this class.</p>
 
 
           </div>
-          
         </div>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-<h1 class="logo"><a href="../index.html">Cloud Scanner</a></h1>
-
-
-
-
-
-
-
-
-<h3>Navigation</h3>
-<p class="caption"><span class="caption-text">API Reference</span></p>
-<ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="modules.html">cloud_scanner</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="cloud_scanner.html">cloud_scanner package</a></li>
+  <h3><a href="../index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">cloud_scanner.simulators package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-cloud_scanner.simulators.account_service_simulator">cloud_scanner.simulators.account_service_simulator module</a></li>
+<li><a class="reference internal" href="#module-cloud_scanner.simulators.container_storage_simulator">cloud_scanner.simulators.container_storage_simulator module</a></li>
+<li><a class="reference internal" href="#module-cloud_scanner.simulators.queue_simulator">cloud_scanner.simulators.queue_simulator module</a></li>
+<li><a class="reference internal" href="#module-cloud_scanner.simulators.resource_service_simulator">cloud_scanner.simulators.resource_service_simulator module</a></li>
+<li><a class="reference internal" href="#module-cloud_scanner.simulators.table_storage_simulator">cloud_scanner.simulators.table_storage_simulator module</a></li>
+<li><a class="reference internal" href="#module-cloud_scanner.simulators">Module contents</a></li>
 </ul>
 </li>
 </ul>
 
-<div class="relations">
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="../index.html">Documentation overview</a><ul>
-  <li><a href="modules.html">cloud_scanner</a><ul>
-  <li><a href="cloud_scanner.html">cloud_scanner package</a><ul>
-      <li>Previous: <a href="cloud_scanner.services.html" title="previous chapter">cloud_scanner.services package</a></li>
-  </ul></li>
-  </ul></li>
-  </ul></li>
-</ul>
-</div>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="cloud_scanner.services.html"
+                        title="previous chapter">cloud_scanner.services package</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/generated/cloud_scanner.simulators.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <div class="searchformwrapper">
@@ -333,32 +427,30 @@ this class.</p>
     </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
-
-
-
-
-
-
-
-
         </div>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="footer">
-      &copy;2018, Microsoft.
-      
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
-      
-      |
-      <a href="../_sources/generated/cloud_scanner.simulators.rst.txt"
-          rel="nofollow">Page source</a>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="cloud_scanner.services.html" title="cloud_scanner.services package"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Cloud Scanner 0.1.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="modules.html" >cloud_scanner</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="cloud_scanner.html" >cloud_scanner package</a> &#187;</li> 
+      </ul>
     </div>
-
-    
-
-    
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2018, Microsoft.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.1.
+    </div>
   </body>
 </html>
