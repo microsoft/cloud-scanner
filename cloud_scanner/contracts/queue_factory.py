@@ -40,7 +40,7 @@ class QueueFactory:
             return cls._factories[service_type](queue_name)
         except KeyError:
             raise KeyError(
-                f"Service type {service_type} is not " +
+                f"Service type {service_type} is not "
                 "registered for Queue Service")
 
     @classmethod
