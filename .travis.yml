@@ -1,19 +1,17 @@
 language: python
 python:
-- '3.6'
+  - '3.6'
 install:
   - pip install -r requirements.txt
 script:
   - pytest
+  - make sphinx
   - flake8 --ignore=F401 cloud_scanner
 before_deploy:
-# Generate Sphinx docs
   - make sphinx
-  # Generate PIP package distros
   - pip install --upgrade setuptools wheel
   - python setup.py sdist bdist_wheel  
 deploy:
-  # Deploy Sphinx docs to github pages
   - provider: pages
     skip_cleanup: true
     local-dir: docs/build/html
@@ -21,11 +19,11 @@ deploy:
     keep-history: true
     on:
       tags: true
-  # Deploy pypi package
   - provider: pypi
     skip_cleanup: true
     user: $PYPI_USERNAME
-    password: $PYPI_PASSWORD
+    password:
+      secure: 0SV5boZ0WMeFcYImt8dhwafr9RFYq/KY45e5TbsgZ3hVtbmXGqd6GXZdCEl5KqiNg2fGXr5SzY6LljPufVAc36YsCao30kEEIdbS/njtW21QofooECK5eJIurRctJGtv9E2JozJz+Yvdb6Yu81XOQNxjgB7F6CUXRI6fYE++GkHGa7Kb6ksKx5PDZ8xQAP5zRehnVP/YAl8M0oQNkaE9NkYJJcJKXywWXbajF42WVriuCZ0x+xDoFDQqqpoI9CQE6lj3RpxM4UHr4AmUnbAjXok04JJhU6XbyJWtH0XH3+O5XyzRY+1vKNh4aaAcICAZ2N/jcH8JIkuerC2cLrwksDaBksrj1Bq+90MeI2h45fCpnubTEnKAp6UwSrDYclM8IbzXom088BgSg0p4e2I/bE8cBMm37K5rTnjLduZY8TJHhE8GLPe1NmYydwr4F9Q0yDmQw23o4k067Plk5jRUv4bEuz+mMtkoTEeaOaB0RYyrsE0wu8ErpGMwn2xRb3tsuTNA/iutygQL3ah6Cbskcuvo1C1I3UpS35erFUwH53dhZjwmtRYDON7fOLve3pD/+MZtJBXDPiTnmiZNWslxZPbq1xCIsJ52jc+5UWyR8K0yjE9+TafkyoWrwqPO5rLQ49VcCdmYZWrqGErSPd4EB0PAn4vFSeu1PNlW7nyDe/g=
     distributions: "sdist bdist_wheel"
     on:
       tags: true
