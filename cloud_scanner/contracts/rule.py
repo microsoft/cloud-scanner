@@ -1,6 +1,6 @@
 from abc import ABC
 
-from .resource import Resource
+from cloud_scanner.contracts.resource import Resource
 
 
 class Rule(ABC):

@@ -1,5 +1,5 @@
 from cloud_scanner.config.process_config import ProcessConfig
-from .queue import Queue
+from cloud_scanner.contracts.queue import Queue
 
 
 def register_queue_service(service_name, service_factory):

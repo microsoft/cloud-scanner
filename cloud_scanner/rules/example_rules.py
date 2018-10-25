@@ -1,8 +1,8 @@
 from cloud_scanner.config.process_config import ProcessConfig
-from ..contracts.queue_factory import QueueFactory
-from ..contracts.resource import Resource
-from ..contracts.rule_factory import register_rule
-from ..contracts.tag_update_rule import TagUpdateRule
+from cloud_scanner.contracts.queue_factory import QueueFactory
+from cloud_scanner.contracts.resource import Resource
+from cloud_scanner.contracts.rule_factory import register_rule
+from cloud_scanner.contracts.tag_update_rule import TagUpdateRule
 
 
 def create_rule(cls):
